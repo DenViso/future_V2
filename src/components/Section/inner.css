@@ -1,4 +1,4 @@
-.subInner-conteiner {
+/* .subInner-conteiner {
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
@@ -151,7 +151,7 @@
 
 /* MODAL */
 
-.modal {
+/* .modal {
   position: absolute;
   top: 0;
   left: 0;
@@ -403,10 +403,10 @@
     width: 100%;
     height: 75%;
   }
-}
+} */
 
-@media (max-width: 580px) {
-  /* modal зробить щоб було видно все */
+/* @media (max-width: 580px) {
+  
   .modal {
     width: 100%;
     height: 1000px;
@@ -635,14 +635,229 @@
   .subInner-info-text {
     display: -webkit-flex;
     display: flex;
-    flex-direction: column; /* вертикально */
-    justify-content: center; /* центрує p всередині */
-    align-items: flex-start; /* вирівнює по лівому краю */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
     padding: 8px 12px;
     background-color: var(--white);
     border-radius: inherit;
-    height: 25%; /* або 100% якщо потрібно */
+    height: 25%; 
     position: relative;
     z-index: 10;
   }
+}  */
+
+/* NEW PRODUCTS */
+
+/* Контейнер */
+.product-page {
+  padding:0px 50px ;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+ 
+}
+
+/* Основний блок */
+.modal-content {
+      display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-between;
+    gap: 50px;
+   
+}
+
+/* Заголовок */
+.modal-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Головне зображення/відео */
+.main-media {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-img,
+.main-video {
+  width: 570px;
+
+  height: 570px;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Галерея прев’ю */
+.media-thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail.active {
+  border: 4px solid rgb(90, 18, 18); /* синя рамка для активного */
+}
+
+.thumbnail-img,
+.thumbnail-video {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+/* Іконка для відео */
+.thumbnail-video {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  position: relative; 
+  background-color: black; /* Для наочності */
+}
+
+.thumbnail-video::before {
+  content: "▶";
+  position: absolute;
+  color: rgb(90, 18, 18);
+  font-size: 20px;
+  top: 50%;
+  left: 50%;
+  transform: scale(1.2) translate(-50%, -50%);
+  text-shadow: 0 0 5px rgba(0,0,0,0.8);
+  display: none;
+  z-index: 10; 
+  cursor: pointer;
+}
+
+.thumbnail-video:hover::before {
+  display: block;
+}
+
+
+
+/* Інфо про товар */
+.modal-info {
+ 
+  text-align: left;
+  width: 100%;
+height:   auto;
+  
+  font-size: 16px;
+  line-height: 1.5;
+}
+.modal-info>.product_page_text{
+  
+  align-items: flex-start;
+}
+.main_section1_text h2{
+  font-family: var( --fontFamily_h1);
+  font-size: 34px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+.main_section1_text>h2> span{
+  font-family: var( --fontFamily_h1);
+  font-size: 34px;
+  font-weight: 500;
+font-style: italic;
+  color: #8E1145;
+  margin-bottom: 10px;
+}
+.main_section1_text>span{
+  font-family: var(--fontFamily_Inter);
+  font-size: 16px;
+  font-weight: 400;
+
+  
+  margin-bottom: 10px;
+}
+.modal_characteristic{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  text-align: left;
+  width: 100%;
+  height: auto;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* .modal-info span {
+  font-weight: bold;
+} */
+
+/* Лайк */
+.heart {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.heart img {
+  transition: transform 0.2s ease;
+}
+
+.heart:hover img {
+  transform: scale(1.2);
+}
+
+.modal_conteiner_img{
+      display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    max-width: 570px;
+}
+
+.modal_characteristic span{
+font-size: 16px;
+font-weight: 400;
+font-family: var(--fontFamily_Inter);
+color:#777777 ;
+}
+
+.modal_characteristic_btn{
+  width: fit-content;
+}
+.modal_characteristic h3{
+  font-family: var(--fontFamily_Inter);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.modal_characteristic p{
+  font-family: var(--fontFamily_Inter);
+  font-size: 16px;
+  font-weight: 400;
 }

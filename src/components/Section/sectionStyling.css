@@ -123,8 +123,185 @@
   border-radius: 5px;
 }
 
-/* Services */
-.services > ul {
+/* Services */  
+
+
+.services_section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:0 50px;
+}
+.services_img>img {
+  width: 100%;
+  height: 605px;
+}
+
+
+.services_section2 {
+width: 100%;
+    height: 1030px;
+    align-items: center;
+    gap: 114px;
+    margin: 0px auto;
+}
+.services_text {
+display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    height: 600px;
+    margin-top: 140px;
+}
+.services_text>p {
+ margin-top: 0px;
+}
+.services_text>h2 {
+ width: 550px;
+}
+.services_img2>img {
+ width: 100%;
+ height: 825px;
+}
+.services_section2_main_text {
+ width: 510px;
+ display: flex;
+ flex-direction: column;
+ align-items: start;
+ justify-content: flex-end;
+
+  
+}
+
+.services_section2_main_text>h2 {
+  width: 610px;
+ 
+ display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-end;
+  margin: 30px 0 115px 0;
+  font-family: var(--fontFamily_inter);
+  color: var(--black);
+  font-size: 16px;
+  /* text-align: center; */
+  margin-bottom: 20px;
+  font-weight: 600;
+
+}
+
+.services_section2_main_text>ul>li{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  text-align: start;
+  list-style-type: disc; /* точка */
+  
+}
+.services_section2_main_text>ul>li>h2 {
+  font-family: var(--fontFamily_inter);
+  color: var(--black);
+  font-size: 16px;
+ 
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.services_section2_main_text>ul>li>p {
+  font-family: var(--fontFamily_inter);
+  color: var(--black);
+  font-size: 14px;
+  padding-left: 28px;
+    margin-bottom: 10px;
+  font-weight: 400;
+}
+.services_section2_main_text>p {
+  align-self: start;
+  font-family: var(--fontFamily_inter);
+  color: var(--black);
+  font-size: 14px;
+ text-align: start;
+    margin-bottom: 10px;
+  font-weight: 400;
+}
+.services_section2_main_text>ul>li>h2::before {
+  content: "•";      /* символ точки */
+  color: #3B1D16;    /* колір */
+  margin-right: 8px; /* відступ від тексту */
+  font-size: 18px;   /* розмір точки */
+  padding-left: 10px;
+}
+.services_btn
+{
+  width: 275px;
+  height: 50px;
+  background-color: #3F2622;
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-family: var(--fontFamily_inter);
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 10px;
+}
+.h2_regular {
+  font-weight: 400;
+}
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  margin: 20px 0;
+  font-family: var(--fontFamily_inter);
+
+  font-size: 14px;
+  color:rgba(0, 0, 0, 0.5);
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color:rgba(0, 0, 0, 0.5);
+  transition: color 0.2s ease;
+  font-family: var(--fontFamily_inter);
+  font-size: 12px;
+  font-weight: 400;
+}
+.breadcrumbs p {
+  text-decoration: none;
+  color: #a33;
+  transition: color 0.2s ease;
+  font-family: var(--fontFamily_inter);
+  font-size: 12px;
+  font-weight: 400;
+  cursor: context-menu;
+}
+
+.breadcrumbs a:hover {
+  color: #a33; /* підсвічування при наведенні */
+}
+
+.breadcrumbs .separator {
+  margin: 0 6px;
+  color: #aaa;
+}
+
+
+
+
+
+
+
+
+
+/* .services > ul {
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -163,7 +340,7 @@
   100% {
     color: var(--black);
   }
-}
+} */
 
 /* Care */
 .care > h2 {
@@ -218,210 +395,337 @@
   font-weight: 600;
 }
 /* Reviwes */
-.reviwesForm {
+.reviwes{
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  padding: 2rem;
+  padding: 0rem 50px;
   position: relative;
 }
-.reviwesForm > h2 {
-  font-size: 34px;
-  font-family: var(--fontFamily);
-  color: var(--black);
+.position_rew{
+  margin-top: 0px;
+  width: 100%;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    
 }
-.reviwesForm > ul {
-  width: 90%;
+.rew_text_but{
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.rew_info_p{
+ font-family: var(--fontFamily_inter);
+  color: var(--black);
+  font-size: 16px;
+  /* text-align: center; */
+  margin-bottom: 20px;
+  font-weight: 400;
+  width: 490px;
+}
+.reviwes-button{
+  
+  width: fit-content;
+  text-decoration: underline 2px solid var(--black);
+  
+  color: var(--black);
+  border: none;
+  
+  font-size: 16px;
+  font-family: var(--fontFamily_inter);
+  font-weight: 600;
+  cursor: pointer;
+ 
+}
+
+.rewiew-card {
+      width: 380px;
+    height: 345px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    gap: 1.5rem;
+    border-radius: 10px;
+        background: rgba(223, 220, 213, 0.52);
+    padding: 1rem;
+  align-items: flex-start
+}
+.rewiew-card>small {
+background-color: transparent;
+}
+.star{
+  background-color: transparent;
+}
+.star> img{
+  background-color: transparent;
+}
+
+/* rewCard */
+.active_card{
+  display: none;
+ 
+}
+
+/*  */
+.file_input {
+  display: none; /* приховуємо стандартне поле input */
+}
+
+.photo_preview_container>.file_input_label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 25%;
+  height: 80px;
+
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  user-select: none;
+  margin-right: 8px;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.file_input_label:hover {
+  border-color: #3F2622;
+  background-color: #f0f8ff;
+  color: #3F2622;
+}
+
+.photo_preview_container {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  width: 100%;
+  background-color:transparent ;
+}
+
+.photo_preview {
+  width: 20%;
+  height: 80px;
+  border-radius: 8px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  object-fit: cover;
+}
+/*  */
+.rew_card{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform:translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+/* background-color: var(--white); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:  30px;
+   backdrop-filter: blur(4px); /* інтенсивність розмиття */
+  -webkit-backdrop-filter: blur(4px); /* для Safari */
+  background: rgba(39, 39, 39, 0.4); /* напівпрозорий фон */
+}
+.rew_card_conteiner{
+  width: 485px;
+  height: 650px;
+  background-color: var(--white);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.rew_card_header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background-color: transparent;
+}
+
+.rew_card_header>button{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: var(--black);
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  top: -15px;
+  right: 10px;
+}
+.rew_card_header>h2{
+  width: fit-content;
+  height: 30px;
+  background-color: transparent;
+  font-size: 34px;
+  color: var(--black);
+  font-weight: 600;
+  text-align: center;
+  font-family: var(--fontFamily_h1);
+ 
+ 
+}
+.rating{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 1.5rem;
-  padding: 2rem;
-  overflow-x: auto;
+  gap: 0.5rem;
+  background-color: transparent;
 }
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  box-shadow: 1px 1px 10px 1px var(--white);
+.rating>span{
+ 
+  background-color: transparent;
 }
-
-::-webkit-scrollbar-track {
-  background: var(--white);
-  border: 1px solid var(--white);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--black);
-  height: 6px;
-  border-radius: 3px;
-}
-.reviwesForm > ul > li {
-  font-family: var(--fontFamily);
-  font-size: 28px;
-  min-width: 150px;
-  height: 300px;
-  text-align: center;
-  color: var(--black);
-  background-color: var(--white);
-  border-radius: 7px;
-  padding: 5px;
-  box-shadow: 1px 1px 10px 1px var(--black);
+.rew_form{
+  width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.reviwesForm > ul > li > strong {
-  font-family: var(--fontFamily);
-  font-size: 30px;
-  color: var(--black);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  width: 100%;
-  text-align: center;
-  height: 30%;
-  overflow: scroll;
-}
-
-.reviwesForm > ul > li > p {
-  font-family: var(--fontFamily);
-  font-size: 30px;
-  color: var(--black);
-  word-wrap: break-word;
-  height: 60%;
-  overflow-wrap: break-word;
-  overflow: scroll;
-  width: 100%;
-  text-align: center;
-}
-.reviwesFormMain {
-  width: 100%;
-  display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  gap: 1.5rem;
-  padding: 2rem;
-  background-color: var(--white);
-  position: relative;
-  color: var(--white);
+  gap: 1rem;
+  padding: 1rem;
+  background-color: transparent;
 }
-
-.reviwesFormMain > input {
-  width: 45%;
-  height: 30px;
-  background-color: var(--white);
+.rew_form>label{
+  font-size: 12px;
   color: var(--black);
-  border: 1px solid var(--black);
-  border-radius: 7px;
-  padding: 5px;
-  font-size: 20px;
-  font-family: var(--fontFamily);
+  font-weight: 400;
+  font-family: var(--fontFamily_inter);
+  background-color: transparent;
 }
-.reviwesFormMain > button {
-  width: 23%;
-  height: 30px;
-  background-color: var(--black);
-  color: var(--white);
-  border: 1px solid var(--white);
-  border-radius: 7px;
-  padding: 5px;
-  font-size: 20px;
-  font-family: var(--fontFamily);
-  cursor: pointer;
-  text-align: center;
-}
-.reviwesFormMain > button:hover {
-  background-color: var(--white);
-  color: var(--black);
-}
-
-.revswesImg {
+.rew_form>input{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  padding: 8px;
+  border: 1px solid var(--grey);  
+  border-radius: 5px;  
+  background-color: transparent;  
+  color: var(--black);  
+  font-size: 12px;  
+  font-family: var(--fontFamily_inter);  
+  font-weight: 400;  
+}  
+ div>textarea{
+  width: 100%;
+  max-width:455px ;
+  height: 80px;
+  padding: 8px;
+  border: 1px solid var(--grey);  
+  border-radius: 5px;  
+  background-color: transparent;  
+  color: var(--black);  
+  font-size: 12px;  
+  font-family: var(--fontFamily_inter);  
+  font-weight: 400;  
+}  
+/* стилізація чекбокса */
+.radio_label {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 3rem;
-  padding: 2rem;
+  cursor: pointer;
   position: relative;
-  color: var(--white);
-}
-.revswesImg > img {
-  width: 250px;
-  height: 550px;
-  border-radius: 20px;
-  box-shadow: var(--white) 0 0 10px;
+  gap: 8px;
 }
 
-/* About */
-.about,
-.dip,
-.reviwes,
-.care,
-.services,
-.ring,
-.diamond {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 2rem;
-  background-color: var(--white);
+.radio_input {
+  display: none; /* ховаємо стандартний чекбокс */
+}
+
+.radio_button {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #3F2622;
+  border-radius: 4px;
   position: relative;
 }
-.about > a,
-.dip > a,
-.reviwes > a,
-.care > a,
-.services > a,
-.diamond > a {
+
+.radio_input:checked + .radio_button::after {
+  content: "✓";
+  color: #3F2622;
+  font-size: 20px;
   position: absolute;
-  top: 0;
-  left: 0;
-  margin: 1rem;
-  color: var(--grey);
+  top: -50%;
+  left: 0px;
 }
-.about > a:hover,
-.ring > a:hover,
-.dip > a:hover,
-.reviwes > a:hover,
-.care > a:hover,
-.services > a:hover,
-.diamond > a:hover {
-  text-shadow: var(--white) 0 0 10px;
-  color: var(--white);
+
+.radio_input:checked + .radio_button {
+  background-color:transparent; /* колір активного чекбокса */
+  border-color: #3F2622;
 }
-.about > h1,
-.dip > h1,
-.reviwes > h1,
-.care > h1,
-.services > h1,
-.ring > h1,
-.diamond > h1 {
-  color: var(--black);
-  font-family: var(--fontFamily);
-  font-weight: 600;
-  font-size: 36px;
-  margin-top: 20px;
-}
-.dip {
+
+.rew_form>button{
+  width: 100%;
+  padding: 10px;
+  border: none;  
+  margin-top: 30px;
+  border-radius: 20px;  
+  background-color: #3F2622;  
+  color: var(--white);  
+  font-size: 16px;  
+  font-family: var(--fontFamily_inter);  
+  font-weight: 600;  
+  cursor: pointer;  
+}   
+
+
+/* About */
+
+.about {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  padding: 0 50px;
+ 
 }
-.dip > img {
+.main_section1_text .about_text{
+  width: 970px;
+  line-height: 1.8; /* множник відносно розміру шрифту */
+
+  text-align: center;
+}
+.about>.position_about{
+  gap: 0px;
+  justify-content: space-between;
+  margin-top: 150px;
+
+}
+.pos_about{
+      justify-content: flex-start;
+    margin: 50px 0px;
+}
+
+/* CONTACTS */
+.contacts{
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
 }
 
 

@@ -109,14 +109,14 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content {
+/* .modal-content {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
   max-width: 500px;
   width: 90%;
   position: relative;
-}
+} */
 
 .close {
   position: absolute;
@@ -126,9 +126,9 @@
   cursor: pointer;
 }
 
-.modal-info {
+/* .modal-info {
   margin-bottom: 20px;
-}
+} */
 
 .modal-img img {
   width: 100%;

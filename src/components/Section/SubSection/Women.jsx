@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const Women = ({ t }) => {
   return (
     <div className="ring">
-      <Link className="back" to="/Ring">
+      <Link className="back" to="/Catalog">
         {t("back.toJewelry")}
       </Link>
       <h2>{t("section.section3")}</h2>

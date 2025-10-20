@@ -3,14 +3,18 @@
   "name": "igorzoloto",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+    "type": "module",
   "scripts": {
     "dev": "vite --host",
+    "start": "npm run dev",
     "build": "vite build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -b github-pages-build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "translate": "node translate.js"
+
+
   },
   "dependencies": {
     "axios": "^1.6.8",
@@ -35,6 +39,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "gh-pages": "^6.1.1",
+    "i18n-auto-translate": "^0.0.3",
     "vite": "^5.1.6",
     "vite-plugin-html": "^3.2.2"
   }

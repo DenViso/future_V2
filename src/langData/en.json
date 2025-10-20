@@ -1,53 +1,56 @@
 {
+  "main": {
+    "title": "Main",
+    "jewelry": "Jewelry",
+    "stones": "Stones",
+    "services": "Services",
+    "care": "Jewelry care",
+    "reviews": "Reviews",
+    "about": "About us",
+    "contact": "Contacts",
+    "catalog": "Catalog",
+    "title1": "Jewelry that ",
+    "title1span": " matters",
+    "title1text": "Handmade, individual approach, and jewelry that speaks louder than words. Submit your request, and we will bring your idea to life in a unique form.",
+    "title1btn": "Submit application",
+    "text": " Since 2010, we have been creating meaningful products — for engagements, gifts, memories , and yourself."
+  },
+  "footer": {
+    "leftText": "Jewelry with history",
+    "category1": "How we work",
+    "category2": "Reviews"
+  },
+  "adr": {
+    "title": "Working hours:",
+    "strict": "Kyiv region.",
+    "adress": "Vyshneve, 15 Evropeyska str.",
+    "ofice": "3rd floor",
+    "day1": "Mon-Fri",
+    "day2": "Sat",
+    "day3": "Sun",
+    "time": " 10:00-19:00",
+    "time2": " 11:00-18:00",
+    "time3": "Off"
+  },
+  "sec2": {
+    "title": "Jewelry",
+    "titlespan": "with soul",
+    "text": "We are a family workshop with a history that began in 2011. Father and son turned a small workshop into a brand known for its quality, trust, and aesthetics.",
+    "text1": "Each piece contains not only precious materials, but also meaning that weighs more."
+  },
+  "sec3": {
+    "title": "What",
+    "titlespan": "is chosen most often"
+  },
   "back": {
     "back": "Back",
     "toMain": "To main page",
-    "toJewelry":"To Jewelry"
+    "toJewelry": "To Jewelry"
   },
-  "adresses": {
-    "strict": "Kyiv region.",
-    "adress": "Vyshneve, 15 Evropeyska str.,",
-    "ofice": "Bud. Pobutu, 3rd floor, to the left is the bell",
-    "time": "Mon-Fri 10:00-19:00",
-    "time2": "Sat 11:00-18:00",
-    "time3": "Sunday off"
-  },
-  "dropMenu": {
-    "sec1": "Decorations",
-    "sec2": "Stones",
-    "sec3": "Services",
-    "sec4": "Tips",
-    "sec5": "Feedback",
-    "sec6": "About us",
-    "sec7": "Search by code",
-    "sec8": "Social networks"
-  },
-  "cart": {
-   
-    "button": "Close",
-    "empty":"Your cart is empty"
-  },
-  "about": {
-    "title": "We`re the best!"
-  },
-  "care": {
-    "title": "Jewelry Care ",
-    "text": "The main thing in taking care of jewelry is to understand that it is a precious thing! The appearance and beauty will depend on how you take care of yours ring or favorite earrings. The main thing that unites almost everyone body jewelry, like everything that surrounds us, has the property of being covered dirt, and from time to time, at least once every six months, this dirt must be removed. But if you want, for example, your diamond to always impress with its game, then you will have to visit a jewelry workshop at least once a month. Products with mechanical joints that wear out over time, a chain, a bracelet, carrings with hanging elements...this is often noticed when the product is broken, and this is the risk of losing your jewel! The same applies to inserts, especially with precious stones,when wearing a krapan (paw) for a long time,which they hold stones,can bend, wear out. Therefore, our advice is from time to time time to take the jewelry to a competent jeweler for cleaning and inspection. It is also worth understanding that some jewelry must be removed when taking a shower, visiting spa salons, swimming in seas,oceans, sports or homework.",
-
-    "title2": "Details about some properties:",
-    "title2.1": "We pay attention to jewelry owners",
-    "stone": "Pearl",
-    "stone1": "Malachite",
-    "stone2": "Coral",
-    "stone3": "Emeralds",
-    "stone4": "Diamond",
-    "stone5": "Tapaz",
-    "ta": "ta",
-    "text1": "аccording to their structure, these are rather fragile and soft stones, too strongly react to chemical elements, it can be cosmetics or spa salons It is advisable to store the boxes so that the parts do not collide with each other one.",
-    "text3": "A very fragile stone! But very expensive! Therefore, it is important to wear jewelry with this charming stone, consider these features. Also it is important to clean properly. Emeralds cannot, like most stones, just wash in an ultrasonic bath. There are many nuances, the first is that approximately 95% of emeralds are treated with oil, which can leak (iein some cases, can be corrected), there are also other processing methods which must be taken into account. If you don't even have an oiled Emerald, what is it? costs many times more, you still have to be very careful with it.",
-    "text4": "one of the least capricious stones, but there are some polished diamonds that can deteriorate in ultrasonic cleaners. Enriched or not can be specified in the correct certificate, or final geologist.",
-    "text5": "rauch topaz lovers of these stones should know over time when exposed to the sun for a long time, these stones can burn out."
-  },
+  "dropMenu": {},
+  "cart": {},
+  "about": {},
+  "care": {},
   "stones": {
     "title": "Gems",
     "title1": "Avamarin",
@@ -58,79 +61,75 @@
     "title6": "Pomegranate",
     "title7": "Other stones"
   },
-  "reviwes": { 
-    "title": "Your reviews", 
-    "button": "Add review" ,
+  "reviwes": {
+    "title": "Your reviews",
+    "button": "Add review",
     "text": "Guest",
     "name": "You name",
-    "reviwe": "Your review"  
+    "reviwe": "Your review"
   },
-  "services":{
-    "title":"Services",
-    "text1":"We create jewelry according to our design, as well as according to your motives. We specialize separately in diamonds, colored stones.",
-    "text2":"We will provide body jewelry repair services.",
-    "text2.1":"solder ",
-    "text2.2":"pin",
-    "text2.3":"polishing",
-    "text2.4":"alignment",
-    "text2.5":"increase or decrease size",
-    "text2.6":"rhodium plating",
-    "text2.7":"product recovery",
-    "text2.8":"engraving and other...",
-    "title1":"Important!",
-    "text3":"The cost of the works is announced only after inspection by our master.",
-    "title2":"For example",
-    "text3.1":"soldering chain can depend on: weight, blown or not, double - triple weaving, white or red gold and other..."
- },
- "section": {
-
-  "title": "Jewelry",
-  "section1": "Engagement", 
-  "section2": "Wedding rings", 
-  "section3": "Women's", 
-  "section4": " Men's",
-  "section5": " Solo", 
-  "section6": " Solo + Placer", 
-  "section7": " Fantasy Solo", 
-  "section8": " Fantasy + Placer", 
-  "section9": " Colored",
-  "section22": " Without stone",
-
-  "title2":"Wedding rings",
-  
-  "section10":"Ring",
-   "section11":"Track",
-   "section12":"Pusety",
-   "section13":"Earrings",
-   "section14":"Cross",
-   "section15":"Suspension",
-   "section16":"Chain",
-   "section17":"Bracelet",
-   "section18":"Other",
-
-   "section19":"Ring",
-   "section20":"Bracelet", 
-   "section21":"Cross"
- },
- "created":{
-  "title":"Created by"
-},
-"err":{
-  "err-h1":"Error 404",
-  "err-h3":"Look like you're lost",
-  "err-p":"the page you are looking for not avaible!"
-},
-"product":{
- "title":"Product ID:",
-"p1":"Sample:",
-"p2":"Color:",
-"p3":"Size:",
-"p4":"Weight:",
-"p5":"Stone Characteristics:",
-"p6":"Price:",
-"p7":"uah",
-"p8":"Certificate"
-
-}
- 
+  "services": {
+    "title": "Services",
+    "text1": "We create jewelry according to our design, as well as according to your motives. We specialize separately in diamonds, colored stones.",
+    "text2": "We will provide body jewelry repair services.",
+    "text2.1": "solder ",
+    "text2.2": "pin",
+    "text2.3": "polishing",
+    "text2.4": "alignment",
+    "text2.5": "increase or decrease size",
+    "text2.6": "rhodium plating",
+    "text2.7": "product recovery",
+    "text2.8": "engraving and other...",
+    "title1": "Important!",
+    "text3": "The cost of the works is announced only after inspection by our master.",
+    "title2": "For example",
+    "text3.1": "soldering chain can depend on: weight, blown or not, double - triple weaving, white or red gold and other..."
+  },
+  "section": {
+    "man": "Men",
+    "woman": "Women",
+    "title": "Jewelry:",
+    "section1": "Engagement",
+    "section2": "Wedding rings",
+    "section3": "Women's",
+    "section4": " Men's",
+    "section5": " Solo",
+    "section6": " Solo + Placer",
+    "section7": " Fantasy Solo",
+    "section8": " Fantasy + Placer",
+    "section9": " Colored",
+    "section22": " Without stone",
+    "title2": "Wedding rings",
+    "section10": "Ring",
+    "section11": "Track",
+    "section12": "Pusety",
+    "section13": "Earrings",
+    "section14": "Cross",
+    "section15": "Suspension",
+    "section16": "Chain",
+    "section17": "Bracelet",
+    "section18": "Other",
+    "section19": "Ring",
+    "section20": "Bracelet",
+    "section21": "Cross"
+  },
+  "err": {
+    "err-h1": "Error 404",
+    "err-h3": "Look like you're lost",
+    "err-p": "the page you are looking for not avaible!"
+  },
+  "product": {
+    "title": "Product ID:",
+    "p1": "Sample:",
+    "p2": "Color:",
+    "p3": "Size:",
+    "p4": "Weight:",
+    "p5": "Stone Characteristics:",
+    "p6": "Price:",
+    "p7": "uah",
+    "p8": "Certificate"
+  },
+  "created": {
+    "title": "Створено"
+  }
 }

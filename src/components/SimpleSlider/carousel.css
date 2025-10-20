@@ -1,0 +1,131 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  /* max-width: 1100px; */
+  /* margin: auto; */
+  /* overflow: hidden; */
+  /* padding-top: 100px; щоб дати місце під кнопки */
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-around ;
+}
+
+/* блок з кнопками */
+.carousel-controls {
+      width: 100px;
+    height: 40px;
+  position: absolute;
+  top: -70px;
+  right: 0px;
+  display: flex;
+    justify-content: space-between;
+  background:rgba(239, 237, 233, 1);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.carousel-controls>button {
+    width: 50px;
+    height: 40px;
+  background: transparent;
+  color: #3F2622;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+.carousel-controls>button>img{
+    background: transparent;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* .carousel-controls button:hover {
+  background: rgba(255,255,255,0.2);
+} */
+
+/* контент */
+.carousel-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 380px;
+  background:inherit;
+  text-align: start;
+  max-width: 400px;
+}
+
+.card img {
+  width: 380px;
+  height: 570px;
+  border-radius: 20px;
+}
+
+.card>h3 {
+   font-family: var(--fontFamily_Inter);
+  margin: 20px 0 15px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 16px;
+  color: rgba(87, 87, 87, 1);
+  font-family: var(--fontFamily_Inter);
+  font-weight: regular;
+}
+
+/* .card-btn {
+  background: #c99b2e;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card-btn:hover {
+  background: #a57f22;
+} */
+
+/* точки */
+/* .carousel-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #333;
+} */
+
+/* 📱 адаптив */
+@media (max-width: 900px) {
+  .card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}

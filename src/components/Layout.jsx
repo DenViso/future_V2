@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { MenuDrop } from "./DropWindow/MenuDrop";
-import { SearchDrop } from "./DropWindow/SearchDrop";
-import { Cart } from "./Cart/Cart";
+// import { MenuDrop } from "./DropWindow/MenuDrop";
+// import { SearchDrop } from "./DropWindow/SearchDrop";
+// import { Cart } from "./Cart/Cart";
 // import LazyLoad from "react-lazyload";
 
 export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
   const [activeMenu, setActiveMenu] = useState(null); // "menu", "search", or null
   const [showCart, setShowCart] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 700);
+  // const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 700);
 
   const location = useLocation();
 
@@ -45,127 +45,93 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
   //   mousePosition > { x: 0, y: 0 } && setActiveMenu(null);
   // };
 
-  const handleMouseLeave = () => {
-    if (mousePosition.x > 0 && mousePosition.y > 0) {
-      setActiveMenu(null);
-    }
-  };
+  // const handleMouseLeave = () => {
+  //   if (mousePosition.x > 0 && mousePosition.y > 0) {
+  //     setActiveMenu(null);
+  //   }
+  // };
 
-  const handlePhoneClick = () => {
-    window.removeEventListener("beforeunload", handleBeforeUnload);
-  };
+  // const handlePhoneClick = () => {
+  //   window.removeEventListener("beforeunload", handleBeforeUnload);
+  // };
 
-  const handleClick = () => {
-    setShowCart(true);
-  };
+  // const handleClick = () => {
+  //   setShowCart(true);
+  // };
 
-  const handleSearch = () => {
-    setActiveMenu(null);
+  // const handleSearch = () => {
+  //   setActiveMenu(null);
     // Закриття пошукового меню після натискання кнопки пошуку
     // Логіка пошуку
-  };
+  // };
 
-  const handleMouseEnter = (menu) => {
-    setActiveMenu(menu);
-  };
+  // const handleMouseEnter = (menu) => {
+  //   setActiveMenu(menu);
+  // };
 
   const currentLanguage = i18n.language;
   // console.log(currentLanguage);
   return (
-    <>
-      {/*HEADER*/}
-      <header className="header">
-        <div className="menu">
-          {/* <LazyLoad> */}
-            <img
-              loading="lazy"
-              className="iconSize"
-              src="/img/headerIcon/menu.png"
-              alt="Menu"
-              onMouseEnter={() => handleMouseEnter("menu")}
-            />
-          {/* </LazyLoad> */}
-          {activeMenu === "menu" && (
-            <MenuDrop hideDropMenu={() => setActiveMenu(null)} t={t} />
-          )}
-          {/* <LazyLoad> */}
-            <img
-              loading="lazy"
-              className="iconSize"
-              src="/img/headerIcon/search.png"
-              alt="Search"
-              onMouseEnter={() => handleMouseEnter("search")}
-              // onMouseLeave={() => handleMouseLeave(null)}
-            />
-          {/* </LazyLoad> */}
-          {activeMenu === "search" && (
-            <SearchDrop
-              className="search-menu"
-              handleSearch={handleSearch}
-              t={t}
-              cat1={cat1}
-            />
-          )}
-        </div>
-        <div className="logo1">
-          <Link to="/">
-            {/* <LazyLoad> */}
-              <img
-                className="logoHeader"
-                loading="lazy"
-                src="/img/logo/logo150.webp"
-                alt="Logo"
-              />
-            {/* </LazyLoad> */}
-          </Link>
-        </div>
+  <div className="App">
 
-        <div className="contact">
-          {!isMobileView && (
-            <div className="lng">
+      {/* HEADER */}
+      <header>
+        <div className="hero">
+          <div className="hero_header">
+            <div className="logo">
+              <Link to="/">
+                <img src="/new_img/logo/logo.png" alt="logo" />
+              </Link>
+            </div>
+            <div className="menu">
+              <ul>
+                <li>
+                  <Link to="/Catalog">
+                    <p> {t("main.catalog")}</p>
+                  </Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link to="/Services">
+                    <p>{t("main.services")}</p>
+                  </Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link to="/About">
+                    <p>{t("main.about")}</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/Contact">
+                    <p>{t("main.contact")}</p>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="lang">
               <button
                 className={
                   currentLanguage == "uk" ? "lngBtn  activeLng" : "lngBtn"
                 }
+                
                 onClick={() => changeLanguage("uk")}
               >
                 Укр
               </button>
+              <div className="line"></div>
               <button
                 className={
-                  currentLanguage == "en" ? "lngBtn  activeLng" : "lngBtn"
+                  currentLanguage == "en" ? " lngBtn  activeLng" : "lngBtn"
                 }
+               
                 onClick={() => changeLanguage("en")}
               >
                 Eng
               </button>
             </div>
-          )}
-          <div className="lng">
-            <a href="tel:+380936918998" onClick={handlePhoneClick}>
-              {/* <LazyLoad> */}
-                {" "}
-                <img
-                  loading="lazy"
-                  className="iconSize"
-                  src="/img/headerIcon/contact2.png"
-                  alt="Menu"
-                />
-              {/* </LazyLoad> */}
-            </a>
-            <div className="">
-              {/* <LazyLoad> */}
-                <img
-                  loading="lazy"
-                  className="iconSize"
-                  src="/img/h.svg"
-                  alt="Cart"
-                  onClick={handleClick}
-                />
-              {/* </LazyLoad> */}
-              {showCart && <Cart setShowCart={setShowCart} t={t} />}
-            </div>
           </div>
+         
         </div>
       </header>
 
@@ -173,340 +139,75 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
       <Outlet />
 
       {/* FOOTER */}
-      <footer>
-        <div className="footerLeft">
-          <Link to="/">
-            {/* <LazyLoad> */}
-              <img className="footerLogo" src="/img/logo/logo.png" alt="Logo" />
-            {/* </LazyLoad> */}
-          </Link>
-          <div className="footerText">
-            <a href="tel:+380936918998" onClick={handlePhoneClick}>
-              +38 (093) 691-89-98
-            </a>
-            <br />
-            <a href="future.com.ua@gmail.com">future.com.ua@gmail.com</a>
-          </div>
-        </div>
-        <div className="footerMap">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.629673157392!2d30.369922776553917!3d50.39210167158106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cbf08b9b7cf7%3A0xc2d82165c5b686a3!2z0K7QstC10LvQuNGA0L3Ri9C5INCx0YDQtdC90LQgIkZ1dHVyZSI!5e0!3m2!1suk!2sua!4v1710944818529!5m2!1suk!2sua"></iframe>
-        </div>
-        <div className="footerAdrress">
-          <address>
-            <p>{t("adresses.strict")}</p>
-            <p>{t("adresses.adress")}, </p>
-            <p>{t("adresses.ofice")}</p>
-            <p>{t("adresses.time")}</p>
-            <p>{t("adresses.time2")}</p>
-            <p>{t("adresses.time3")}</p>
-          </address>
-          {isMobileView && (
-            <div
-              className="lng"
-              style={{
-                color: "white",
-                display: "flex",
-                alignItems: "center",
-                marginTop: "20px",
-              }}
-            >
-              <button
-                className={
-                  currentLanguage == "uk" ? "lngBtn  activeLng" : "lngBtn"
-                }
-                style={{ color: "white", border: "none" }}
-                onClick={() => changeLanguage("uk")}
-              >
-                Укр
-              </button>
-              <button
-                className={
-                  currentLanguage == "en" ? " lngBtn  activeLng" : "lngBtn"
-                }
-                style={{ color: "white", border: "none" }}
-                onClick={() => changeLanguage("en")}
-              >
-                Eng
-              </button>
+    <footer class="footer">
+  <div class="footer-container">
+ <div className="logo">
+              <Link to="/">
+                <img src="/new_img/hero_main/logo2.png" alt="logo" />
+              </Link>
             </div>
-          )}
-        </div>
-      </footer>
-      <div
-        className="copyright"
-        style={{
-          backgroundColor: "white",
-          width: "100%",
-          textAlign: "center",
-        }}
-      >
-        <p className="copyright">
-          Copyright © 2021. All Rights Reserved.
-          <Link to="/CreatedBy">
-            {/* <LazyLoad> */}
-            <img
-              className="goto"
-              // loading="lazy"
-              style={{
-                width: "20px",
-                height: "20px",
-                marginLeft: "15px",
-                textAlign: "center",
-              }}
-              src="/img/createdBy/chick.png"
-              alt=""
-            />
-            {/* </LazyLoad> */}
-          </Link>
-        </p>
-      </div>
-    </>
-  );
+    {/* <!-- Ліва колонка --> */}
+    <div class="footer-left">
+      {/* <div class="logo">FUTURE<br/><span>jewelry</span></div> */}
+      <p class="slogan">{t("footer.leftText")}</p>
+      <p class="desc">{t("main.text")}</p>
+    </div>
+
+    {/* <!-- Середня колонка --> */}
+    <div class="footer-middle">
+      <ul>
+        <li><Link to="/Catalog">{t("main.catalog")}</Link></li>
+        <li><Link to="/Services">{t("main.services")}</Link></li>
+        <li><Link to="Care">{t("footer.category1")}</Link></li>
+        <li><Link to="/Reviews">{t("footer.category2")}</Link></li>
+        <li><Link to="/About">{t("main.about")}</Link></li>
+        <li><Link to="/Contact">{t("main.contact")}</Link></li>
+      </ul>
+    </div>
+
+    {/* <!-- Права колонка --> */}
+    <div class="footer-right">
+      <address className="address footer-address">
+            
+            <p>{t("adr.strict")}, {t("adr.adress")}, {t("adr.ofice")}</p>
+
+            <h4>{t("adr.title")}</h4>
+            <p>
+              <span>{t("adr.day1")}</span> {t("adr.time")}<br />
+              <span>{t("adr.day2")}</span>{t("adr.time2")}
+              <br />
+              <span>{t("adr.day3")}</span> {t("adr.time3")}
+            </p>
+          </address>
+<a href="tel:+380 0634545828">+380 063 454 58 28</a>
+
+
+      <p class="social-links">
+  <a href="https://t.me/yourusername" target="_blank">Telegram</a> <div className="line lf"></div>
+  <a href="viber://chat?number=%2B380936918998" target="_blank">Viber</a> <div className="line lf"></div>
+  <a href="https://wa.me/380936918998" target="_blank">WhatsApp</a> <div className="line lf"></div>
+  <a href="facetime:+380936918998" target="_blank">FaceTime</a>
+</p>
+
+<p class="social-links">
+  <a href="https://instagram.com/yourusername" target="_blank">Instagram</a><div className="line lf"></div>
+  <a href="https://facebook.com/yourusername" target="_blank">Facebook</a>
+</p>
+
+    </div>
+  </div>
+
+  {/* <!-- Нижня частина --> */}
+  <div class="footer-bottom">
+    <p>© 2025 FUTURE Jewelry. Усі права захищено.</p>
+    <p>
+      <a href="#">Політика конфіденційності</a> | 
+      <a href="#">Договір публічної оферти</a>
+    </p>
+  </div>
+    </footer>
+
+
+  </div>
+  );      
 };
-
-// import React, { useState, useEffect, Suspense } from "react";
-// import { Link, Outlet, useLocation } from "react-router-dom";
-// import LazyLoad from "react-lazyload";
-
-// // Динамічне імпортування компонентів
-// const MenuDrop = React.lazy(() => import("./DropWindow/MenuDrop"));
-// const SearchDrop = React.lazy(() => import("./DropWindow/SearchDrop"));
-// const Cart = React.lazy(() => import("./Cart/Cart"));
-
-// // Функція для дебаунсу (щоб зменшити частоту викликів)
-// const debounce = (func, delay) => {
-//   let timer;
-//   return (...args) => {
-//     clearTimeout(timer);
-//     timer = setTimeout(() => func(...args), delay);
-//   };
-// };
-
-// export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
-//   const [activeMenu, setActiveMenu] = useState(null); // "menu", "search", або null
-//   const [showCart, setShowCart] = useState(false);
-//   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-//   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 700);
-
-//   const location = useLocation();
-//   const currentLanguage = i18n.language;
-
-//   // Скидання меню при зміні маршруту
-//   useEffect(() => {
-//     if (location.pathname === "/") {
-//       window.scrollTo(0, 0);
-//     }
-//     setActiveMenu(null);
-//   }, [location.pathname]);
-
-//   // Оновлення стану при зміні розміру вікна
-//   useEffect(() => {
-//     const handleResize = () => setIsMobileView(window.innerWidth <= 700);
-//     const debouncedResize = debounce(handleResize, 300);
-
-//     window.addEventListener("resize", debouncedResize);
-//     return () => {
-//       window.removeEventListener("resize", debouncedResize);
-//     };
-//   }, []);
-
-//   // Відстеження руху миші
-//   useEffect(() => {
-//     const handleMouseMove = (e) => {
-//       setMousePosition({ x: e.clientX, y: e.clientY });
-//     };
-//     window.addEventListener("mousemove", handleMouseMove);
-//     return () => {
-//       window.removeEventListener("mousemove", handleMouseMove);
-//     };
-//   }, []);
-
-//   const handleMouseLeave = () => {
-//     if (mousePosition.x > 0 && mousePosition.y > 0) {
-//       setActiveMenu(null);
-//     }
-//   };
-
-//   const handlePhoneClick = () => {
-//     // Додайте реальну логіку, якщо потрібна
-//   };
-
-//   const handleClick = () => {
-//     setShowCart(true);
-//   };
-
-//   const handleSearch = () => {
-//     setActiveMenu(null);
-//     // Логіка пошуку
-//   };
-
-//   const handleMouseEnter = (menu) => {
-//     setActiveMenu(menu);
-//   };
-
-//   return (
-//     <>
-//       {/* HEADER */}
-//       <header className="header">
-//         <div className="menu">
-//           <LazyLoad>
-//             <img
-//               loading="lazy"
-//               className="iconSize"
-//               src="/img/headerIcon/menu.png"
-//               alt="Меню"
-//               onMouseEnter={() => handleMouseEnter("menu")}
-//             />
-//           </LazyLoad>
-//           <Suspense fallback={<div>Завантаження...</div>}>
-//             {activeMenu === "menu" && (
-//               <MenuDrop hideDropMenu={() => setActiveMenu(null)} t={t} />
-//             )}
-//           </Suspense>
-//           <LazyLoad>
-//             <img
-//               loading="lazy"
-//               className="iconSize"
-//               src="/img/headerIcon/search.png"
-//               alt="Пошук"
-//               onMouseEnter={() => handleMouseEnter("search")}
-//               onMouseLeave={handleMouseLeave}
-//             />
-//           </LazyLoad>
-//           <Suspense fallback={<div>Завантаження...</div>}>
-//             {activeMenu === "search" && (
-//               <SearchDrop
-//                 className="search-menu"
-//                 handleSearch={handleSearch}
-//                 t={t}
-//                 cat1={cat1}
-//               />
-//             )}
-//           </Suspense>
-//         </div>
-//         <div className="logo1">
-//           <Link to="/">
-//             <LazyLoad>
-//               <img
-//                 className="logoHeader"
-//                 loading="lazy"
-//                 src="/img/logo/logo150.webp"
-//                 alt="Логотип"
-//               />
-//             </LazyLoad>
-//           </Link>
-//         </div>
-
-//         <div className="contact">
-//           {!isMobileView && (
-//             <div className="lng">
-//               {["uk", "en"].map((lang) => (
-//                 <button
-//                   key={lang}
-//                   className={
-//                     currentLanguage === lang ? "lngBtn activeLng" : "lngBtn"
-//                   }
-//                   onClick={() => changeLanguage(lang)}
-//                 >
-//                   {lang.toUpperCase()}
-//                 </button>
-//               ))}
-//             </div>
-//           )}
-//           <div className="lng">
-//             <a href="tel:+380936918998" onClick={handlePhoneClick}>
-//               <LazyLoad>
-//                 <img
-//                   loading="lazy"
-//                   className="iconSize"
-//                   src="/img/headerIcon/contact2.png"
-//                   alt="Контакти"
-//                 />
-//               </LazyLoad>
-//             </a>
-//             <div>
-//               <LazyLoad>
-//                 <img
-//                   loading="lazy"
-//                   className="iconSize"
-//                   src="/img/h.svg"
-//                   alt="Кошик"
-//                   onClick={handleClick}
-//                 />
-//               </LazyLoad>
-//               <Suspense fallback={<div>Завантаження...</div>}>
-//                 {showCart && <Cart setShowCart={setShowCart} t={t} />}
-//               </Suspense>
-//             </div>
-//           </div>
-//         </div>
-//       </header>
-
-//       {/* MAIN */}
-//       <Outlet />
-
-//       {/* FOOTER */}
-//       <footer>
-//         <div className="footerLeft">
-//           <Link to="/">
-//             <LazyLoad>
-//               <img
-//                 className="footerLogo"
-//                 src="/img/logo/logo.png"
-//                 alt="Логотип"
-//               />
-//             </LazyLoad>
-//           </Link>
-//           <div className="footerText">
-//             <a href="tel:+380936918998" onClick={handlePhoneClick}>
-//               +38 (093) 691-89-98
-//             </a>
-//             <br />
-//             <a href="mailto:future.com.ua@gmail.com">future.com.ua@gmail.com</a>
-//           </div>
-//         </div>
-//         <div className="footerMap">
-//           <iframe
-//             src="https://www.google.com/maps/embed?pb=..."
-//             title="Карта"
-//           ></iframe>
-//         </div>
-//         <div className="footerAddress">
-//           <address>
-//             <p>{t("adresses.strict")}</p>
-//             <p>{t("adresses.adress")}</p>
-//             <p>{t("adresses.office")}</p>
-//             <p>{t("adresses.time")}</p>
-//           </address>
-//           {isMobileView && (
-//             <div className="lng">
-//               {["uk", "en"].map((lang) => (
-//                 <button
-//                   key={lang}
-//                   className={
-//                     currentLanguage === lang ? "lngBtn activeLng" : "lngBtn"
-//                   }
-//                   onClick={() => changeLanguage(lang)}
-//                 >
-//                   {lang.toUpperCase()}
-//                 </button>
-//               ))}
-//             </div>
-//           )}
-//         </div>
-//       </footer>
-//       <div className="copyright">
-//         <p>
-//           Copyright © 2021. All Rights Reserved.
-//           <Link to="/CreatedBy">
-//             <img
-//               className="goto"
-//               src="/img/createdBy/chick.png"
-//               alt="Created by"
-//             />
-//           </Link>
-//         </p>
-//       </div>
-//     </>
-//   );
-// };
