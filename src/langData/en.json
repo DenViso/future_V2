@@ -20,10 +20,18 @@
     "category1": "How we work",
     "category2": "Reviews"
   },
+
+  "cont":{
+    "tit":"Stay with us",
+    "titSp":" in touch",
+    "p":"You can find us in our store-workshop, call us or write to us via messenger. "
+  },
   "adr": {
+    "adr":"Address:",
     "title": "Working hours:",
     "strict": "Kyiv region.",
-    "adress": "Vyshneve, 15 Evropeyska str.",
+    "adress": "Vyshneve  ",
+    "adress1": " 15 Evropeyska str.",
     "ofice": "3rd floor",
     "day1": "Mon-Fri",
     "day2": "Sat",
@@ -31,6 +39,23 @@
     "time": " 10:00-19:00",
     "time2": " 11:00-18:00",
     "time3": "Off"
+  },
+
+  "sec9": {
+    "n1":"Name",
+    "n2":"Enter Name",
+    "t2":"Phone",
+    "e3":"Select a convenient way to contact you",
+    "o1":"Telegram",
+    "o2":"Viber",
+    "o3":"Phone"
+    
+  },
+
+   "sec6": {
+   "p1":"Restoration and renovation",
+   "p2":"Repairs with warranty",
+   "p3":"Custom manufacturing"
   },
   "sec2": {
     "title": "Jewelry",
@@ -130,6 +155,92 @@
     "p8": "Certificate"
   },
   "created": {
-    "title": "Створено"
+     "title": "Created"
+  },
+ "mp": {
+  "d1":"Elegant handmade rings",
+  "d2":"Stylish bracelets with soul",
+  "d3":"Exquisite pendants made of precious materials",
+
+   "h":{
+    "s4":"Choose jewelry",
+    "t4":", that will touch your heart",
+
+    "s5":"examples of our work",
+    "t5":"See",
+    "t5.1":"and inspire yourself to create your own",
+
+    "s6":"Our store-mastery",
+    "t6":"in Vishnevy",    
+
+    "s7":"Your stories",
+    "t7":"- our pride",
+    
+    "s8":"Contact us",
+    "t8":"We will be happy to answer any questions"
+   
+},
+
+"p":{
+  "p4":"Elegant jewelry for women: earrings, pendants, bracelets.",
+   "p4.1":"Solid and stylish accessories for men.",
+   "p4.2":"Wedding rings, custom orders, designer jewelry.",
+
+   "p7":"In addition to the workshop, we have a physical store where you can try on jewelry, get advice, discuss custom orders, or pick up finished products.",
+
+    "p8":" Genuine emotions of customers whom we have helped to preserve or create something important.",
+
+    "p9":"Submit your request and we will contact you",
+   "p9.1":" for a personal consultation."
+
+}
+},
+
+"btn": {
+  "leave":"Leave request",
+  "add":"Add to cart",
+  "more":"See more",
+  "buy":"Buy",
+  "load":"Load more",
+  "order":"Order",
+  "choose":"Choose jewelry",
+  "review":"Leave review",
+  "see":"See reviews",
+  "map":"See on map"
+},
+
+
+  "aU": {
+    "hS":"About us. ",
+    "h":"How it all began",
+    "p1":"This is a family business that started in a small workshop in 2011.",
+    "p2":"Father and son combined their experience and passion for jewelry — and in 2013 our brand and first store appeared. ",
+    "p3":"We have been working since 2010, officially since 2013. We create jewelry that is not only made of gold and stones, but also has meaning. ",
+    "h1":"We are the ones who create",
+    "h1s":"jewelry ",
+    "h1sbr":"with meaning",
+    "p4":" Our team consists of experienced jewelers, young designers, technologists, and those responsible for service and communication.",
+    "p5":" Each product passes through the hands of several people — and each one puts a part of themselves into it.",
+    "p6":" We work by hand, using modern tools, but the main thing is vision and a sense of form.",
+    "h2s":"Beauty has meaning,",
+    "h2":"if,",
+    "h2br":"it is yours.",
+    "p7":"We don't just create products — we help preserve moments, memories, and feelings.",
+    "p8":"It could be a gift, a proposal, a memory, or just a dream.",
+    "p9":"And we are always there to make it come true.",
+
+    "h3s":"Ready to create",
+    "h3br":"the jewelry of your dreams?",
+    "p10":"Leave a request and we will contact you",
+    "p11":"for a personal consultation.",
+
+    "p12":"And we are always here to make it a reality."
   }
+            
+  
+
+
+
+
+
 }

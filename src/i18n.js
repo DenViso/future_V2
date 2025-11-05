@@ -4,7 +4,9 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 import uk from "./langData/ua.json";
 import en from "./langData/en.json";
-
+import ukTranslations from "./langData/ua.json";
+import enTranslations from "./langData/en.json";
+const savedLanguage = localStorage.getItem("language") || "uk";
 const resources = {
   uk: {
     translation: uk,
@@ -16,12 +18,24 @@ const resources = {
 };
 
 i18next
-  .use(LanguageDetector)
-  .use(initReactI18next)
+  // .use(LanguageDetector)
+  // .use(initReactI18next)
+  // .init({
+  //   resources,
+  //   lng: 'uk', 
+  //   fallbackLng: 'uk', 
+  //   interpolation: {
+  //     escapeValue: false,
+  //   },
+
+   .use(initReactI18next)
   .init({
-    resources,
-    lng: 'uk', 
-    fallbackLng: 'uk', 
+    lng: savedLanguage, // 👈 використовуємо збережену мову
+    fallbackLng: "uk",
+    resources: {
+      uk: { translation: ukTranslations },
+      en: { translation: enTranslations },
+    },
     interpolation: {
       escapeValue: false,
     },

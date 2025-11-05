@@ -4,9 +4,10 @@ export const Services = ({ t }) => {
   return (
     <div className="services_section">
 <nav class="breadcrumbs">
-  <Link to="/" >Головна</Link>
+  <Link to="/" >{
+    t("main.title")}</Link>
   <span class="separator">›</span>
-  <p>Послуги</p>
+  <p>{t("main.services")}</p>
   
   
 </nav>

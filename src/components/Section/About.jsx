@@ -6,23 +6,20 @@ export const About = ({ t }) => {
   return (
     <div className="about">
       <nav class="breadcrumbs">
-        <Link to="/">Головна</Link>
+        <Link to="/">{t("main.title")}</Link>
         <span class="separator">›</span>
-        <p>Про нас</p>
+        <p>{t("main.about")}</p>
       </nav>
       {/* section1 */}
       <section className="main_section1">
         <div className="main_section1_text">
           <h1>
-            <span>Про нас.</span>Як усе почалося
+            <span>{t("aU.hS")}</span>{t("aU.h")}
           </h1>
           <p className="about_text">
-            Це родинна справа, яка бере початок з маленької майстерні у 2011
-            році. <br />
-            Батько й син об’єднали досвід і пристрасть до ювелірної справи — і
-            вже у 2013 з’явився наш бренд і перший магазин. <br />
-            Ми працюємо з 2010 року, офіційно — з 2013. Створюємо прикраси, у
-            яких є не тільки золото й каміння, а й зміст.
+            {t("aU.p1")} <br />
+            {t("aU.p2")} <br />
+            {t("aU.p3")}
           </p>
         </div>
 
@@ -35,17 +32,16 @@ export const About = ({ t }) => {
 
         <section className="main_section7 position_about">
           <div className="main_section4_text position7  pos_about">
-            <h2>Ми ті, хто створює
-              <span> прикраси  <br /> зі змістом</span> 
+            <h2>{t("aU.h1")}<span> {t("aU.h1s")}  <br /> {t("aU.h1sbr")}</span> 
             </h2>
             <p>
-              Наша команда — це ювеліри з досвідом, молоді дизайнери, технологи й ті, хто відповідає за сервіс і комунікацію.
+             {t("aU.p4")}
             </p>
             <p>
-             Кожен виріб проходить через руки кількох людей — і кожен вкладає частину себе.
+             {t("aU.p5")}
             </p>
             <p>
-             Ми працюємо вручну, з використанням сучасних інструментів, але головне — це бачення і відчуття форми.
+             {t("aU.p6")}
             </p>
            
           </div>
@@ -61,16 +57,16 @@ export const About = ({ t }) => {
           </div>
           <div className="main_section4_text position7 pos_about">
             <h2>
-              <span> Краса має зміст,</span> якщо <br /> вона ваша.
+              <span> {t("aU.h2s")}</span> {t("aU.h2")} <br /> {t("aU.h2br")}
             </h2>
             <p>
-              Ми не просто створюємо вироби — ми допомагаємо зберігати моменти, нагадування, стани.
+              {t("aU.p7")}
             </p>
             <p>
-             Це може бути подарунок, пропозиція, пам’ять, просто мрія.
+            {t("aU.p8")}
             </p>
             <p>
-            І ми завжди поруч, щоб зробити її реальною.
+            {t("aU.p9")}
             </p>
            
           </div>
@@ -81,24 +77,24 @@ export const About = ({ t }) => {
       <section className="main_section7 section9 services_section9">
         <div className="main_section4_text position7">
           <h2>
-            <span>Готові створити </span> <br /> прикрасу вашої мрії?
+            <span>{t("aU.h3s")} </span> <br /> {t("aU.h3br")}
           </h2>
           <p>
-            Залиште заявку — і ми зв’яжемось з вами <br />
-            для персональної консультації.
+            {t("aU.p10")} <br />
+            {t("aU.p11")}
           </p>
 
           <form class="contact-form">
-            <label for="name">Ім’я</label>
+            <label for="name">{t("sec9.n1")}</label>
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="Введіть ім’я"
+              placeholder={t("sec9.n2")}
               required
             />
 
-            <label for="phone">Телефон</label>
+            <label for="phone">{t("sec9.t2")}</label>
             <input
               type="tel"
               id="phone"
@@ -107,14 +103,14 @@ export const About = ({ t }) => {
               required
             />
 
-            <label for="contact">Оберіть зручний спосіб зв’язку</label>
-            <select id="contact" name="contact">
-              <option value="telegram">Telegram</option>
-              <option value="viber">Viber</option>
-              <option value="phone">Телефон</option>
+            <label for="contact">{t("sec9.e3")}</label>
+            <select style={{ background: "transparent", color: "gray" }}id="contact" name="contact">
+              <option value="telegram">{t("sec9.o1")}</option>
+              <option value="viber">{t("sec9.o2")}</option>
+              <option value="phone">{t("sec9.o3")}</option>
             </select>
 
-            <button type="submit">Залишити заявку</button>
+            <button type="submit">{t("btn.leave")}</button>
           </form>
           
         </div>

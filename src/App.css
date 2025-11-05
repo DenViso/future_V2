@@ -813,33 +813,42 @@ main {
 /* SECTION 5 */
 
 .main_section5 {
-  width: 100%;
-  height: 1125px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  padding-bottom: 150px;
+    width: 100%;
+    height: 1238px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding-bottom: 150px;
 }
 .size5 {
   text-align: none;
   width: 627px;
+  gap: 50px;
+  display: flex;
 }
 
 .section5_content {
   width: 100%;
   height: 775px;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 27px;
+  justify-content: center; 
+  gap: 27px;*/
   margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  justify-content: center; /* Горизонтальне центрування */
+    align-content: center;   /* Вертикальне центрування (за потреби) */
 }
 
 .section5_content > img {
-  width: 50rem;
-  height: 50rem;
+  
+  width: 360px;
+  height: 380px;
 }
 
 /* .section5_content > img {
@@ -863,7 +872,24 @@ main {
   align-items: flex-end;
   justify-content: space-between;
 }
-
+.sec6_li{
+  width:calc(100% / 3 - 20px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.sec6_p{
+  font-family: var(--fontFamily_Inter);
+  font-weight: 600;
+  font-size: 22px;
+  color: #3F2622;
+  background: transparent;
+  text-align: center;
+  margin-top: 10px;
+}
 /* SECTION 7 */
 
 .main_section7 {
@@ -871,7 +897,7 @@ main {
   height: 635px;
   display: flex;
   align-items: flex-end;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 210px;
   padding-bottom: 11px;
 }
@@ -973,14 +999,17 @@ main {
   height: 400px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 20px;
 
   padding: 50px 0px 20px 0px;
 }
+.s_8_h{
+  width: 100%;
+}
 
 .main_section8_card {
-  min-width: 380px;
+  min-width: calc(100%/3 -20px);
   height: 344px;
   background: rgba(223, 220, 213, 0.52);
   border-radius: 20px;
@@ -1087,7 +1116,42 @@ main {
 }
 
 /* SECTION 9 */
-
+.section9 {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  /* align-items: flex-start; */
+  /* justify-content: end; */
+  margin-top: 34px;
+}
+.position9 {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+ padding-bottom: 50px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.section9_conteiner {
+  width: 100%;
+  height: 230px;
+  display: flex;
+  flex-direction: row-reverse; 
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.section9_img {
+  width: 480px;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -55px;
+}
 #contact {
   appearance: none; /* ховає стандартну стрілку (Chrome, Safari, Edge) */
   -webkit-appearance: none; /* Safari */
@@ -1877,5 +1941,71 @@ font-size: 22px;
 color: #3F2622;
 font-weight: 400;
 font-size: 14px;
+
+}
+
+
+@media (max-width: 580px){
+ .App{
+  max-width:  580px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+ } 
+ .footer-container, .footer-right, .footer-left, .footer-middle, .address, .footer-bottom{
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+ }
+ .social-links{
+  justify-content: center;
+ }
+ /* section 9 розібраться з позиціями*/
+ .section9{
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  max-height: 600px;
+ }
+  .main_section7{
+    height: fit-content;
+    width: 100%;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+ 
+  .position9{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+.main_section7_img > .section9_img   {
+  width:100%;
+  height: fit-content;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  position: static;
+ 
+
+}
+.section9_img{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+  top: 0px;
+}
 
 }

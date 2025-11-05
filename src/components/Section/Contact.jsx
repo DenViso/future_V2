@@ -5,9 +5,9 @@ export const Contact = ({ t }) => {
   return (
     <div className="contacts">
       <nav class="breadcrumbs">
-        <Link to="/">Головна</Link>
+        <Link to="/">{t("main.title")}</Link>
         <span class="separator">›</span>
-        <p>Контакти</p>
+        <p>{t("main.contact")}</p>
       </nav>
 
       {/*sectoion 7*/}
@@ -15,19 +15,18 @@ export const Contact = ({ t }) => {
       <section className="main_section7 contact_position">
         <div className="main_section4_text position7 contact_section">
           <h2>
-            <span>Залишайтесь з нами</span> на зв’язку
+            <span>{t("cont.tit")}</span> {t("cont.titSp")}
           </h2>
           <p>
-            Нас можна знайти в магазині-майстерні, зателефонувати чи написати в
-            месенджер.
+        {t("cont.p")}
           </p>
 
           <address className="address contact_address">
-            <h4>Адреса:</h4>
+            <h4>{t("adr.adr")}</h4>
             <p>
-              Київська область, м. Вишневе, <br /> вул. Європейська 15, 3 поверх
+              {t("adr.strict")}, {t("adr.adress")}, <br /> {t("adr.adress1")}, {t("adr.ofice")}
             </p>
-            <h4>Контакти:</h4>
+            <h4>{t("main.contact")}:</h4>
             <p class="social-links contact_social">
               <a href="tel:+38 (093) 691 89 98">+38 (093) 691 89 98</a>
               <a href="https://t.me/yourusername" target="_blank">
@@ -52,12 +51,12 @@ export const Contact = ({ t }) => {
             <h4>Email:</h4>
             <a href="mail:hello@futurejewelry.ua">hello@futurejewelry.ua</a>
 
-            <h4>Графік роботи:</h4>
+            <h4>{t("adr.adr")}</h4>
             <p>
-              <span> Пн-Пт:</span> 10:00 - 19:00 <br />
-              <span>Сб:</span> 11:00 - 18:00
+              <span> {t("adr.day1")}: </span> 10:00 - 19:00 <br />
+              <span> {t("adr.day2")}: </span> 11:00 - 18:00
               <br />
-              <span>Нд:</span> Вихідний
+              <span> {t("adr.day3")}: </span> {t("adr.time3")}
             </p>
           </address>
         </div>

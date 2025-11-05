@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import {Adress }from "../Adress";
+import AdressP from "../AdressP"
 import "../../App.css";
 import Carousel from "../SimpleSlider/Carousel";
 //  import { useTranslation } from "react-i18next";
-
-
 
 
 export const MainePage = ({ t, cat1 }) => {
@@ -13,21 +13,21 @@ export const MainePage = ({ t, cat1 }) => {
     id: 1,
     img: "/new_img/hero_main/slider1.png",
     title: t("section.section10"),
-    desc: "Елегантні каблучки ручної роботи",
+    desc: t("mp.d1"),
     btn: "Детальніше",
   },
   {
     id: 2,
     img: "/new_img/hero_main/slider2.png",
     title:t("section.section17"),
-    desc: "Стильні браслети з душею",
+    desc: t("mp.d2"),
     btn: "Детальніше",
   },
   {
     id: 3,
     img: "/new_img/hero_main/slider3.png",
     title: t("section.section20"),
-    desc: "Вишукані кулони з дорогоцінних матеріалів",
+    desc: t("mp.d3"),
     btn: "Детальніше",
   },
 
@@ -35,42 +35,42 @@ export const MainePage = ({ t, cat1 }) => {
     id: 6,
     img: "/new_img/hero_main/slider3.png",
     title: t("section.section20"),
-    desc: "Вишукані кулони з дорогоцінних матеріалів",
+    desc: t("mp.d3"),
     btn: "Детальніше",
   },
   {
     id: 5,
     img: "/new_img/hero_main/slider2.png",
     title: t("section.section17"),
-    desc: "Стильні браслети з душею",
+    desc: t("mp.d2"),
     btn: "Детальніше",
   },
   {
     id: 4,
     img: "/new_img/hero_main/slider1.png",
     title: t("section.section10"),
-    desc: "Елегантні каблучки ручної роботи",
+    desc: t("mp.d1"),
     btn: "Детальніше",
   },
   {
     id: 8,
     img: "/new_img/hero_main/slider2.png",
     title: t("section.section17"),
-    desc: "Стильні браслети з душею",
+    desc: t("mp.d2"),
     btn: "Детальніше",
   },
   {
     id: 9,
     img: "/new_img/hero_main/slider1.png",
     title: t("section.section10"),
-    desc: "Елегантні каблучки ручної роботи",
+    desc: t("mp.d1"),
     btn: "Детальніше",
   },
   {
     id: 7,
     img: "/new_img/hero_main/slider3.png",
     title: t("section.section20"),
-    desc: "Вишукані кулони з дорогоцінних матеріалів",
+    desc: t("mp.d3"),
     btn: "Детальніше",
   },
 ];
@@ -188,7 +188,7 @@ const reviews = [
         <Carousel slides={cards} />
 
         <Link to="/Catalog" className="main_section3_btn">
-          Обрати прикрасу
+          {t("btn.choose")}
         </Link>
       </section>
 
@@ -197,7 +197,7 @@ const reviews = [
       <section className="main_section4">
         <div className="main_section4_text">
           <h2>
-            <span>Оберіть прикрасу</span>, що торкнеться серця
+            <span>{t("mp.h.s4")}</span>{t("mp.h.t4")}
           </h2>
         </div>
         <div className="main_section_card">
@@ -205,31 +205,31 @@ const reviews = [
             <Link to="/Women">
               <div className="card">
                 <img src="/new_img/hero_main/Women.png" alt="ring" />
-                <h3>Каблучки</h3>
+                <h3>{t("section.section13")}</h3>
                 <p>
-                  Елегантні прикраси для жінок: сережки, підвіски, браслети.
+                 {t("mp.p.p4")}
                 </p>
               </div>
             </Link>
             <Link to="/Men">
               <div className="card">
                 <img src="/new_img/hero_main/Men.png" alt="bracelet" />
-                <h3>Чоловічі</h3>
-                <p>Солідні та стильні аксесуари для чоловіків.</p>
+                <h3>{t("section.section4")}</h3>
+                <p>{t("mp.p.p4.1")}</p>
               </div>
             </Link>
             <Link to="/Engagement">
               <div className="card">
                 <img src="/new_img/hero_main/Engey.png" alt="pendant" />
-                <h3>Для особливих подій</h3>
-                <p>Обручки, індивідуальні замовлення, дизайнерські прикраси.</p>
+                <h3>{t("section.section1")}</h3>
+                <p>{t("mp.p.p4.2")}</p>
               </div>
             </Link>
           </div>
         </div>
         <div className="btn_center">
           <Link to="/Catalog" className="main_section4_btn">
-            Обрати прикрасу
+           {t("btn.choose")}
           </Link>
         </div>
       </section>
@@ -239,8 +239,7 @@ const reviews = [
       <section className="main_section5">
         <div className="main_section4_text size5">
           <h2>
-            Перегляньте <span>приклади наших робіт</span> і надихніться створити
-            свою
+            {t("mp.h.t5")} <span>{t("mp.h.s5")}</span>{t("mp.h.t5.1")} 
           </h2>
         </div>
         <div className="section5_content">
@@ -294,62 +293,70 @@ const reviews = [
 
       <section className="main_section6">
         <ul>
-          <li>
+          <li className="sec6_li">
             <img src="/new_img/hero_main/s6.1.svg" alt="" />
+            <p className="sec6_p">{t("sec6.p1")}</p>
           </li>
-          <li>
+          <li className="sec6_li">
             <img src="/new_img/hero_main/s6.2.svg" alt="" />
+            <p className="sec6_p">{t("sec6.p2")}</p>
           </li>
-          <li>
+          <li className="sec6_li">
             <img src="/new_img/hero_main/s6.3.svg" alt="" />
+            <p className="sec6_p">{t("sec6.p3")}</p>
           </li>
         </ul>
       </section>
 
       {/*sectoion 7*/}
 
-      <section className="main_section7">
+      {/* <section className="main_section7">
         <div className="main_section4_text position7">
           <h2>
-            <span>Наш магазин-майстерня</span> <br /> у Вишневому
+            <span>{t("mp.h.s6")}</span> <br /> {t("mp.h.t6")}
           </h2>
           <p>
-            Окрім майстерні, ми маємо фізичний магазин, де ви можете приміряти
-            прикраси, отримати консультацію, обговорити індивідуальне замовлення
-            або забрати готовий виріб.
+            {t("mp.p.p7")}
           </p>
           <div className=" horizontal"></div>
           <address className="address">
-            <h4>Адреса:</h4>
-            <p>Київська область, м. Вишневе, вул. Європейська 15, 3 поверх</p>
-            <h4>Графік роботи:</h4>
+            <h4>{t("adr.adr")}</h4>
+            <p>{t("adr.strict")}, {t("adr.adress")}, {t("adr.ofice")}</p>
+            <h4>{t("adr.title")}</h4>
             <p>
-              <span> Пн-Пт:</span> 10:00 - 19:00 <br />
-              <span>Сб:</span> 11:00 - 18:00
+              <span> {t("adr.day1")}</span> {t("adr.time")}<br />
+              <span>{t("adr.day2")}</span> {t("adr.time2")}
               <br />
-              <span>Нд:</span> Вихідний
+              <span>{t("adr.day3")}</span> {t("adr.time3")}
             </p>
           </address>
           <button className="main_section4_btn btn_position">
-            Відкрити на карті
+            {t("btn.map")}
           </button>
         </div>
         <div className="main_section7_img">
           <img src="/new_img/hero_main/3.png" alt="" />
         </div>
-      </section>
+      </section> */}
+< section className="main_section7">
+        <AdressP/> 
+        
+        
+        <div className="main_section7_img">
+          <img src="/new_img/hero_main/3.png" alt="" />
+        </div>
+</section>
 
       {/*section 8*/}
 
       <section className="main_section8">
         <div className="size8 main_section4_text ">
           <div className="main_section4_text position8">
-            <h2>
-              <span>Ваші історії</span> — наша гордість
+            <h2 className="s_8_h">
+              <span>{t("mp.h.s7")}</span> {t("mp.h.t7")}
             </h2>
             <p>
-              Справжні емоції клієнтів, яким ми допомогли зберегти або створити
-              щось важливе.
+             {t("mp.p.p8")}
             </p>
           </div>
         </div>
@@ -395,33 +402,38 @@ const reviews = [
         </div>
         <div className="section8_btn">
           <Link to="/Reviews" className="main_section4_btn btn_position8">
-            Дивитись більше відгуків
+            {t("btn.see")}
           </Link>
-          <button>Залишити відгук</button>
+          <button>{t("btn.review")}</button>
         </div>
       </section>
+
       {/*section 9  */}
       <section className="main_section7 section9">
-        <div className="main_section4_text position7">
+        <div className="main_section4_text position9">
           <h2>
-            <span>Готові створити </span> <br /> прикрасу вашої мрії?
+            <span>{t("mp.h.s8")} </span> <br />{t("mp.h.t8")}
           </h2>
           <p>
-            Залиште заявку — і ми зв’яжемось з вами <br />
-            для персональної консультації.
+           {t("mp.p.p9")} <br />
+           {t("mp.p.p9.1")}
           </p>
 
-          <form class="contact-form">
-            <label for="name">Ім’я</label>
+         <div className="section9_conteiner">
+          <div className="main_section7_img">
+          <img className="section9_img" src="/new_img/hero_main/s9.png" alt="" />
+        </div>
+           <form class="contact-form">
+            <label for="name">{t("sec9.n1")}</label>
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="Введіть ім’я"
+              placeholder= {t("sec9.n2")}
               required
             />
 
-            <label for="phone">Телефон</label>
+            <label for="phone">{t("sec9.t2")}</label>
             <input
               type="tel"
               id="phone"
@@ -430,20 +442,20 @@ const reviews = [
               required
             />
 
-            <label for="contact">Оберіть зручний спосіб зв’язку</label>
-            <select id="contact" name="contact">
-              <option value="telegram">Telegram</option>
-              <option value="viber">Viber</option>
-              <option value="phone">Телефон</option>
+            <label for="contact">{t("sec9.e3")}</label>
+            <select style={{ background: "transparent", color: "gray" }} id="contact" name="contact">
+              <option value="telegram">{t("sec9.o1")}</option>
+              <option value="viber">{t("sec9.o2")}</option>
+              <option value="phone">{t("sec9.o3")}</option>
             </select>
 
-            <button type="submit">Залишити заявку</button>
+            <button type="submit">{t("btn.leave")}</button>
           </form>
+        
+         </div>
           
         </div>
-        <div className="main_section7_img">
-          <img src="/new_img/hero_main/s9.png" alt="" />
-        </div>
+        
       </section>
     </main>
   );
