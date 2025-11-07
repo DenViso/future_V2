@@ -1,6 +1,7 @@
 // src/components/CatalogSidebar.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { t } from "i18next";
 
 export const CatalogSidebar = ({
   pusetSubCategories = [],
@@ -17,32 +18,32 @@ export const CatalogSidebar = ({
 
   return (
     <aside className="catalog_sidebar">
-      <h4>Тип прикрас:</h4>
-      <p>Жіночі</p>
+      <h4>{t("section.title")}</h4>
+      <p>{t("section.woman")}</p>
 
       <ul>
-        <li><Link to="/Women/Inner/39">Каблучки</Link></li>
-        <li><Link to="/Women/Inner/26">Браслети</Link></li>
-        <li><Link to="/Women/Inner/29">Підвіски</Link></li>
-        <li><Link to="/Women/Inner/31">Хрестики</Link></li>
-        <li><Link to="/Women/Inner/28">Сережки</Link></li>
+        <li><Link to="/Women/Inner/39">{t("section.section3")}</Link></li>
+        <li><Link to="/Women/Inner/26"> {t("section.section7")}</Link></li>
+        <li><Link to="/Women/Inner/29"> {t("section.section15")}</Link></li>
+        <li><Link to="/Women/Inner/31"> {t("section.section14")}</Link></li>
+        <li><Link to="/Women/Inner/28"> {t("section.section13")}</Link></li>
 
         
          
 
-        <li><Link to="/Women/Inner/30">Доріжка</Link></li>
-        <li><Link to="/Women/Inner/27">Ланцюг</Link></li>
+        <li><Link to="/Women/Inner/30"> {t("section.section11")}</Link></li>
+        <li><Link to="/Women/Inner/27">{t("section.section16")}</Link></li>
       </ul>
 
       <div className="horizontal"></div>
 
-      <p>Чоловічі</p>
+      <p>{t("section.man")}</p>
       <ul>
-        <li><Link to="/Men/Inner/41">Персні</Link></li>
-        <li><Link to="/Men/Inner/43">Ланцюжки</Link></li>
-        <li><Link to="/Men/Inner/44">Браслети</Link></li>
-        <li><Link to="/Men/Inner/45">Хрестики</Link></li>
-        <li><Link to="/Men/Inner/42">Інше</Link></li>
+        <li><Link to="/Men/Inner/41"> {t("section.section19")}</Link></li>
+        <li><Link to="/Men/Inner/43"> {t("section.section16")}</Link></li>
+        <li><Link to="/Men/Inner/44"> {t("section.section17")}</Link></li>
+        <li><Link to="/Men/Inner/45"> {t("section.section14")}</Link></li>
+        <li><Link to="/Men/Inner/42">{t("section.section18")}</Link></li>
       </ul>
 
       <div className="horizontal"></div>
@@ -54,7 +55,7 @@ export const CatalogSidebar = ({
             onClick={() => setIsPusetOpen(v => !v)}
             className="dropdown_btn"
           >
-            Пусет {isPusetOpen ? "▲" : "▼"}
+           {t("section.section12")} {isPusetOpen ? "▲" : "▼"}
           </button>
 
           {isPusetOpen && (
@@ -83,7 +84,7 @@ export const CatalogSidebar = ({
         onClick={() => setIsEngagementOpen(v => !v)}
         className="dropdown_btn"
       >
-        Для заручин {isEngagementOpen ? "▲" : "▼"}
+        {t("section.section1")} {isEngagementOpen ? "▲" : "▼"}
       </button>
 
       {isEngagementOpen && (
@@ -104,7 +105,7 @@ export const CatalogSidebar = ({
       )}
 
       <div className="horizontal"></div>
-      <Link to="/Inner/53">Обручки</Link>
+      <Link to="/Inner/53">{t("section.section2")}</Link>
     </aside>
   );
 };

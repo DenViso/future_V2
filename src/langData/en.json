@@ -176,8 +176,8 @@
     "s7":"Your stories",
     "t7":"- our pride",
     
-    "s8":"Contact us",
-    "t8":"We will be happy to answer any questions"
+    "s8":"Ready to create",
+    "t8":"the jewelry of your dreams?"
    
 },
 
@@ -206,7 +206,10 @@
   "choose":"Choose jewelry",
   "review":"Leave review",
   "see":"See reviews",
-  "map":"See on map"
+  "map":"See on map",
+  "repair":"I want to restore jewelry",
+  "cons":"Consultation with a master",
+  "sp":"Discuss order"
 },
 
 
@@ -235,7 +238,74 @@
     "p11":"for a personal consultation.",
 
     "p12":"And we are always here to make it a reality."
+  },
+  "se":{
+    "hs":"Services",
+    "h":"we have been providing since 2010",
+    "p1":"With respect for detail and meaning, we create",
+    "p2":"restore and repair jewelry that matters.",
+
+    "h1":"Custom-made",
+    "h1s":"to order",
+    "p3":"We create meaningful pieces — for engagements, gifts, memories, or just for yourself. You come with an idea, we bring it to life in metal and stone.",
+    
+    "h2":"How it works",
+    "h2.1":"Consultation",
+    "p4":"We discuss the shape, proportions, metal color, and stone type ",
+    "p4.2":"— we select everything individually.",
+
+    "h2.2":"Cost estimate",
+    "p5":"The jeweler prepares a personalized estimate. This takes 1–2 days",
+    "p5.2":"— every detail matters.",
+    "h2.3":"50% prepayment",
+    "p6":"After approval — we start.",
+    "h2.4":"Manufacturing",
+    "p7":"The process takes 7–20 days — depending on the complexity.",
+    "h2.4.2":"Fitting or delivery",
+    "p7.2":"The finished jewelry can be picked up at the workshop or received",
+    "p7.3":"by mail.",
+    "h2.5":"Service and warranty",
+    "p8":"We service all products free of charge. If necessary,",
+    "p8.2":"we will always restore them.",
+
+    "h3":"Restoration and repair,",
+    "h3s":"of jewelry with an important history,",
+    "p9":" Some jewelry is not just metal and stones. They are memories, gifts, and heirlooms. We carefully restore such items, preserving their form, meaning, and character.",
+
+    "h4":"What we do:",
+    "h4.1":"We solder and repair damage,",
+    "h4.2":"Restore old jewelry",
+    "h4.3":"Clean and polish items",
+    "h4.4":"Securely fix or replace stones",  
+    "h5":"Guarantee:",
+    "p10":"We service all jewelry made by us free of charge (unless changes in design or size are required).",
+    "p10.2":"If something gets damaged over time, we are always ready to restore it."
+
+},
+"pp":{
+    "p1":"Handcrafted with respect for every detail.",
+    "art":"Product art:",
+    "h1":"What you should know:",
+    "p2":"Can be made in white, rose, or yellow gold",
+    "p3":"Can be adapted for other inserts (upon request)",
+    "p4":"Can be made from your own gold",
+    "h2":"Production time:",
+    "p5":"7-20 business days ",
+    "h3":"Order:",
+    "p6":"We will create this piece of jewelry just for you. Leave a request — we will contact you to clarify the details, select the size and materials.",
+    "h4":"Warranty",
+    "p7":"Free service for all products manufactured by us",
+    "p7.1":"If the product needs repair — we will always help"
+
+
+
+
+  },
+   "rev":{
+    "h1":"our customers",
+    "p1":"It is important to us not only what we create, but also how you feel about it. Thank you to everyone who shares their thoughts after receiving their jewelry."
   }
+
             
   
 

@@ -1,33 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+
 import "../inner.css";
 
-const categories = [
-  { id: 39, name: "Каблучки" },
-  { id: 26, name: "Браслети" },
-  { id: 29, name: "Підвіски" },
-  { id: 31, name: "Хрестики" },
-  { id: 28, name: "Сережки" },
-  { id: 30, name: "Доріжка" },
-  { id: 27, name: "Ланцюг" },
-  { id: 53, name: "Обручки" },
-  { id: 35, name: "Пусет > Соло" },
-  { id: 33, name: "Пусет > Соло розсип" },
-  { id: 32, name: "Пусет > Фантазія соло" },
-  { id: 34, name: "Пусет > Фантазія розсип" },
-  { id: 36, name: "Пусет > Без каміння" },
-  { id: 37, name: "Пусет > Кольорові " },
-  { id: 48, name: "Для заручин > Соло розсип" },
-  { id: 51, name: "Для заручин > Фантазія соло " },
-  { id: 50, name: "Для заручин > Фантазія розсип " },
-  { id: 49, name: "Для заручин > Кольорові " },
-  { id: 47, name: "Для заручин > Соло " },
-  { id: 41, name: "Чоловічі > Персні" },
-  { id: 43, name: "Чоловічі > Ланцюжки" },
-  { id: 44, name: "Чоловічі > Браслети" },
-  { id: 45, name: "Чоловічі > Хрестики" },
-  { id: 42, name: "Чоловічі > Інше" },
-];
+
+
 
 const subCategories = [];
 
@@ -38,6 +15,32 @@ export const ProductPage = ({ cat1, usdRate, t }) => {
   const [likedProducts, setLikedProducts] = useState([]);
   const [mainMedia, setMainMedia] = useState(null);
 
+ const categories = [
+  { id: 39, name: t("section.section10") },
+  { id: 26, name: t("section.section17") },
+  { id: 29, name: t("section.section15") },
+  { id: 31, name: t("section.section14") },
+  { id: 28, name: t("section.section13") },
+  { id: 30, name: t("section.section11") },
+  { id: 27, name: t("section.section16") },
+  { id: 53, name: t("section.section2") },
+  { id: 35, name: `${t("section.section12")} > ${t("section.section5")}` },
+  { id: 33, name: `${t("section.section12")} > ${t("section.section6")}` },
+  { id: 32, name: `${t("section.section12")} > ${t("section.section7")}` },
+  { id: 34, name: `${t("section.section12")} > ${t("section.section8")}` },
+  { id: 36, name: `${t("section.section12")} > ${t("section.section22")}` },
+  { id: 37, name: `${t("section.section12")} > ${t("section.section9")}` },
+  { id: 48, name: `${t("section.section1")} > ${t("section.section6")}` },
+  { id: 51, name: `${t("section.section1")} > ${t("section.section7")}` },
+  { id: 50, name: `${t("section.section1")} > ${t("section.section8")}` },
+  { id: 49, name: `${t("section.section1")} > ${t("section.section9")}` },
+  { id: 47, name: `${t("section.section1")} > ${t("section.section5")}` },
+  { id: 41, name: `${t("section.man")} > ${t("section.section19")}` },
+  { id: 43, name: `${t("section.man")} > ${t("section.section16")}` },
+  { id: 44, name: `${t("section.man")} > ${t("section.section17")}` },
+  { id: 45, name: `${t("section.man")} > ${t("section.section14")}` },
+  { id: 42, name: `${t("section.man")} > ${t("section.section18")}` },
+];
   cat1 = Array.isArray(cat1) ? cat1 : [];
 
   // Завантаження продукту
@@ -93,7 +96,9 @@ export const ProductPage = ({ cat1, usdRate, t }) => {
   }
 
   // Для breadcrumbs беремо оригінальне ім’я
-  const breadcrumbCategoryName = category ? category.name : "Невідома категорія";
+  const breadcrumbCategoryName = category
+    ? category.name
+    : "Невідома категорія";
 
   return (
     <div className="product-page ">
@@ -130,9 +135,7 @@ export const ProductPage = ({ cat1, usdRate, t }) => {
         )}
 
         <span className="separator">›</span>
-        <p className="current">
-          {selectedProduct.name || selectedProduct.sku}
-        </p>
+        <p className="current">{selectedProduct.name || selectedProduct.sku}</p>
       </nav>
 
       <div className="modal-content">
@@ -188,40 +191,41 @@ export const ProductPage = ({ cat1, usdRate, t }) => {
               {categoryName}{" "}
               <span style={{ color: "#8E1145" }}>{subCatName}</span>
             </h2>
-            <span>Створена вручну — з повагою до кожної деталі.</span>
+            <span>{t("pp.p1")}</span>
           </div>
 
           <div className="modal_characteristic">
-            <span>Артикул: {selectedProduct.sku}</span>
-            <h3>Що варто знати:</h3>
+            <span>{t("pp.art")} {selectedProduct.sku}</span>
+            <h3>{t("pp.h1")}</h3>
             <ul>
               <li>
-                <p>Можливе виготовлення в білому, рожевому чи жовтому золоті</p>
+                <p>{t("pp.p2")}</p>
               </li>
               <li>
-                <p>Можемо адаптувати під інші вставки (на запит)</p>
+                <p>{t("pp.p3")}</p>
               </li>
               <li>
-                <p>Можливе виготовлення з вашого золота</p>
+                <p>{t("pp.p4")}</p>
               </li>
             </ul>
 
-            <h3>Термін виготовлення:</h3>
-            <p>7–20 робочих днів</p>
+            <h3>{t("pp.h2")}</h3>
+            <p>{t("pp.p5")}</p>
 
-            <h3>Замовлення:</h3>
+            <h3>{t("pp.h3")}</h3>
             <p>
-              Ми створимо цю прикрасу саме під вас. Залиште заявку — ми
-              зв’яжемось для уточнення деталей, підбору розміру та матеріалів.
+              {t("pp.p6")}
             </p>
 
-            <h3>Гарантія:</h3>
+            <h3>{t("pp.h4")}</h3>
             <ul>
               <li>
-                <p>Безкоштовне обслуговування всіх виробів, виготовлених у нас</p>
+                <p>
+                  {t("pp.p7")}
+                </p>
               </li>
               <li>
-                <p>Якщо виріб потребує ремонту — ми завжди допоможемо</p>
+                <p>{t("pp.p7.1")}</p>
               </li>
             </ul>
 
@@ -267,7 +271,7 @@ export const ProductPage = ({ cat1, usdRate, t }) => {
             </div>
 
             <button className="main_section4_btn modal_characteristic_btn">
-              Обговорити замовлення
+              {t("btn.sp")}
             </button>
           </div>
         </div>

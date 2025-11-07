@@ -136,19 +136,17 @@ export const Reviwes = ({ t }) => {
     <div className="reviwes">
       {/* Хлібні крихти */}
       <nav className="breadcrumbs">
-        <Link to="/">Головна</Link> <span className="separator">›</span>
-        <p>Відгуки</p>
+        <Link to="/">{t("main.title")}</Link> <span className="separator">›</span>
+        <p>{t("main.reviews")}</p>
       </nav>
 
       <div className="section2_text position_rew">
         <h2 className="care_info_head">
-          <span>Відгуки</span> наших клієнтів
+          <span>{t("main.reviews")}</span> {t("rev.h1")}
         </h2>
         <div className="rew_text_but">
           <p className="rew_info_p">
-            Нам важливо не лише те, що ми створюємо — а й те, як ви це
-            відчуваєте. Дякуємо всім, хто ділиться словами після отримання
-            прикраси.
+           {t("rev.p1")}
           </p>
           <button
             onClick={() => {
@@ -161,7 +159,7 @@ export const Reviwes = ({ t }) => {
             }}
             className="reviwes-button"
           >
-            Залишити відгук
+            {t("btn.review")}
           </button>
         </div>
       </div>

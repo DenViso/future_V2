@@ -33,7 +33,7 @@ export const Catalog = ({ cat1 = [], t }) => {
     { id: 32, name: (t && t("section.section7")) || "Соло фантаз.діам", img: "/img/sect/jew/pus/3.jpg" },
     { id: 34, name: (t && t("section.section8")) || "Фантаз. з розсип", img: "/img/sect/jew/pus/4.jpg" },
     { id: 37, name: (t && t("section.section9")) || "Кольорові камні", img: "/img/sect/jew/pus/5.jpg" },
-    { id: 36, name: (t && t("section.section22")) || "Без каменів", img: "/img/sect/jew/pus/6.jpg" },
+    { id: 36, name: (t && t("section.section22"))  },
   ];
 
   // Підкаталоги Для заручин
@@ -84,9 +84,9 @@ export const Catalog = ({ cat1 = [], t }) => {
     <div className="Catalog">
       {/* Хлібні крихти */}
       <nav className="breadcrumbs">
-        <Link to="/">Головна</Link>
+        <Link to="/">{t("main.title")}</Link>
         <span className="separator">›</span>
-        <p>Каталог</p>
+        <p>{t("main.catalog")}</p>
       </nav>
 
       <section className="catalog_section">

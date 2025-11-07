@@ -16,10 +16,12 @@ export const Services = ({ t }) => {
            <section className="main_section1">
              <div className="main_section1_text">
                <h1>
-                  <span>Послуги</span>, які ми надаємо з 2010 року
+                  <span>{t("se.hs")}</span>, {
+                  t("se.h")
+                  }
                </h1>
                <p>
-                З повагою до деталей, зі змістом — ми створюємо, <br /> відновлюємо й ремонтуємо прикраси, які мають значення.
+                {t("se.p1")} <br /> {t("se.p2")}
                </p>
              </div>
      
@@ -35,41 +37,41 @@ export const Services = ({ t }) => {
       <section className="main_section2 services_section2" >
         <div className="section2_text services_text" >
           <h2 className="">
-            Виготовлення <span>на замовлення</span>{" "}
+            {t("se.h1")} <span>{t("se.h1s")}</span>{" "}
           </h2>
           <p className="">
-            Ми створюємо вироби, що мають значення — для заручин, подарунків, пам’яті чи просто для себе. Ви приходите з ідеєю, ми — втілюємо її в металі й камінні.
+           {t("se.p3")}
           </p>
           <div className="services_section2_main_text">
-            <h2>Як це відбувається:</h2>
+            <h2>{t("se.h2")}</h2>
             <ul>
               <li>
-                <h2>Консультація</h2>
-              <p>Обговорюємо форму, пропорції, колір металу, тип каменю <br />— підбираємо все індивідуально.</p>
+                <h2>{t("se.h2.1")}</h2>
+              <p>{t("se.p4")} <br />{t("se.p4.2")}</p>
               </li>
               <li>
-                <h2>Прорахунок вартості</h2>
-              <p>Ювелір готує персональний прорахунок. Це займає 1–2 дні <br /> — кожна деталь має значення.</p>
+                <h2>{t("se.h2.2")}</h2>
+              <p>{t("se.p5")} <br /> {t("se.p5.2")}</p>
               </li>
               <li>
-                <h2>Передоплата 50%</h2>
-              <p>Після погодження — стартуємо.</p>
+                <h2>{t("se.h2.3")}</h2>
+              <p>{t("se.p6")}</p>
               </li>
               <li>
-                <h2>Виготовлення</h2>
-              <p>Процес займає 7–20 днів — залежно від складності.</p>
+                <h2>{t("se.h2.4")}</h2>
+              <p>{t("se.p7")}</p>
               </li>
               <li>
-                <h2>Примірка або доставка</h2>
-              <p>Готову прикрасу можна забрати у майстерні або отримати <br /> поштою.</p>
+                <h2>{t("se.h2.4.2")}</h2>
+              <p>{t("se.p7.2")} <br /> {t("se.p7.3")}</p>
               </li>
               <li>
-                <h2>Сервіс та гарантія</h2>
-              <p>Всі вироби ми безкоштовно обслуговуємо. Якщо буде <br /> потрібно — завжди відновимо.</p>
+                <h2>{t("se.h2.5")}</h2>
+              <p>{t("se.p8")} <br /> {t("se.p8.2")}</p>
               </li>
             </ul>
           </div>
-          <button className="services_btn">Консультація з майстром</button>
+          <button className="services_btn">{t("btn.cons")}</button>
         </div>
         <div className="section2_img services_img2">
           <img src="/new_img/hero_main/s2.png" alt="" />
@@ -83,38 +85,36 @@ export const Services = ({ t }) => {
         </div>
         <div className="section2_text services_text" >
           <h2 className="">
-           <span>Реставрація та ремонт</span> <br /> прикрас із важливою історією
-          </h2>
+           <span>{t("se.h3")}</span> <br />  {t("se.h3s")}      </h2>
           <p className="">
-           Деякі прикраси — не просто метал і каміння. Це памʼять, подарунок, спадок. Ми дбайливо відновлюємо такі вироби, зберігаючи форму, зміст і характер.
+           {t("se.p9")}
           </p>
           <div className="services_section2_main_text">
-            <h2>Що ми робимо:</h2>
+            <h2>{t("se.h4")}</h2>
             <ul>
               <li>
                
-              <h2 style={{fontWeight:"400"}}>Паяємо й усуваємо пошкодження</h2>
+              <h2 style={{fontWeight:"400"}}>{t("se.h4.1")}</h2>
               </li>
               <li>
-                <h2 style={{fontWeight:"400"}}>Відновлюємо старі прикраси</h2>
+                <h2 style={{fontWeight:"400"}}>{t("se.h4.2")}</h2>
               
               </li>
               <li>
-                <h2 style={{fontWeight:"400"}}>Чистимо та поліруємо вироби</h2>
+                <h2 style={{fontWeight:"400"}}>{t("se.h4.3")}</h2>
               
               </li>
               <li>
-                <h2 style={{fontWeight:"400"}}>Надійно закріплюємо або замінюємо камені</h2>
+                <h2 style={{fontWeight:"400"}}>{t("se.h4.4")}</h2>
               
               </li>
              
             </ul>
-            <h2>Гарантія:</h2>
-            <p>Всі прикраси, виготовлені у нас, ми обслуговуємо безкоштовно (якщо не потрібні зміни в дизайні чи розмірі).</p>
-            <p>Всі прикраси, виготовлені у нас, ми обслуговуємо безкоштовно (якщо не потрібні зміни в дизайні чи розмірі).
-Якщо з часом щось пошкодиться — завжди готові відновити.</p>
+            <h2>{t("se.h5")}</h2>
+            <p>{t("se.p10")}.</p>
+            <p>{t("se.p10.2")}</p>
           </div>
-          <button className="services_btn">Хочу відновити прикрасу</button>
+          <button className="services_btn">{t("btn.repair")}</button>
         </div>
        
       </section>
@@ -127,24 +127,24 @@ export const Services = ({ t }) => {
       <section className="main_section7 section9 services_section9">
         <div className="main_section4_text position7">
           <h2>
-            <span>Готові створити </span> <br /> прикрасу вашої мрії?
+            <span>{t("mp.h.s8")} </span> <br /> {t("mp.h.t8")}
           </h2>
           <p>
-            Залиште заявку — і ми зв’яжемось з вами <br />
-            для персональної консультації.
+            {t("mp.p.p9")}<br />
+            {t("mp.p.p9.1")}
           </p>
 
           <form class="contact-form">
-            <label for="name">Ім’я</label>
+            <label for="name">{t("sec9.n1")}</label>
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="Введіть ім’я"
+              placeholder={t("sec9.n2")}
               required
             />
 
-            <label for="phone">Телефон</label>
+            <label for="phone">{t("sec9.o3")}</label>
             <input
               type="tel"
               id="phone"
@@ -153,14 +153,14 @@ export const Services = ({ t }) => {
               required
             />
 
-            <label for="contact">Оберіть зручний спосіб зв’язку</label>
-            <select id="contact" name="contact">
+            <label for="contact">{t("sec9.e3")}</label>
+            <select style={{ background: "transparent", color: "gray" }} id="contact" name="contact">
               <option value="telegram">Telegram</option>
               <option value="viber">Viber</option>
-              <option value="phone">Телефон</option>
+              <option value="phone">{t("sec9.o3")}</option>
             </select>
 
-            <button type="submit">Залишити заявку</button>
+            <button type="submit">{t("btn.leave")}</button>
           </form>
           
         </div>
