@@ -7,6 +7,7 @@
     "care": "Jewelry care",
     "reviews": "Reviews",
     "about": "About us",
+    "hww": "How we work",
     "contact": "Contacts",
     "catalog": "Catalog",
     "title1": "Jewelry that ",
@@ -304,7 +305,92 @@
    "rev":{
     "h1":"our customers",
     "p1":"It is important to us not only what we create, but also how you feel about it. Thank you to everyone who shares their thoughts after receiving their jewelry."
-  }
+  },
+
+  "car":{
+
+    "an":{
+
+      "q1":"How much does it cost to make jewelry?",
+
+      "a1":"The cost depends on the complexity, metal, type of stone, and size. We always prepare an individual estimate.",
+
+      "q2":"Can you make jewelry from my gold?",
+
+      "a2":"Our products are not mass-produced. Each piece of jewelry is handmade by an experienced craftsman.",
+
+      "q3":"Can I see the manufacturing process?",
+
+      "a3":"Of course! We will be happy to show you how our products are made. You can visit our workshop or view photos and videos of the manufacturing process on the 'How we work' page.",
+
+      "q4":"What if I don't know which stone to choose?",
+
+      "a4":"Don't worry if you don't know which stone is right for you! We will help you choose the perfect option that suits you in terms of color, energy, and style.",
+
+      "q5":"How long does it take to make?",
+
+      "a5":"The production of jewelry usually takes 2 to 4 weeks, depending on the complexity of the work, the availability of materials, and the workload of the workshop."
+
+    },
+
+    "h1s":"How",
+
+    "h1":"we work",
+
+    "p":"Transparently. Carefully. With respect for every detail.",
+
+    "h2s":"Stages",
+
+    "h2":"of cooperation",
+
+    "h2.1":"Consultation",
+
+    "p2.1":"We discuss the idea. You can visit our workshop or talk to us on the phone.",
+
+    "h2.2":"Individual calculation",
+
+    "p2.2":"The master prepares an accurate cost estimate, taking into account all your wishes. This takes 1-2 days.",
+
+    "h2.3":"50% prepayment",
+
+    "p2.3":"Once the price is approved, we start working.",
+
+    "h2.4":"Manufacturing",
+    "p2.4":"It takes 7–20 days to create a piece of jewelry, depending on its complexity.",
+
+    "h2.5":"Fitting or delivery",
+    "p2.5":"You can pick up your jewelry in person or have it delivered by mail.",
+
+    "h2.6":"Warranty and service",
+    "p2.6":"We provide free service for all the items we have created.",
+
+    "h3s":"Production:",
+    "h3":"how it looks",
+    "p3":" Our products are not mass-produced. Each piece of jewelry",
+    "p3.br":" is handmade by an experienced craftsman.",
+    "p3.1":"We work with diamonds, sapphires, emeralds,",
+    "p3.1.br":"tourmalines, pearls, and other precious stones.",
+    "p3.2":" We use modern technology, but the foundation is",
+    "p3.2.br":"handiwork — meticulous, precise, reliable.",
+
+    "h4":"Guarantees",
+    "p4":"We don't just sell jewelry — we create products for which we are responsible.",
+
+    "h5":" We service all jewelry made by us free of charge",
+    "h5.br":" (cleaning, polishing, inspection, fastening).",
+
+    "h5.1":"  If your jewelry needs repair, please contact us at any time.",
+    "h5.1.br":" We will restore it.",
+
+    "h5.2":" If you have your own gold, we can use it, and you only pay for the work.",
+
+    "h6":" Frequently asked questions"
+
+
+}
+
+
+
 
             
   
