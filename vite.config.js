@@ -5,8 +5,9 @@ import { createHtmlPlugin } from "vite-plugin-html";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
 base: '/future_V2/' // ⚠️ ВАЖЛИВО: назва вашого GitHub репозиторію
+    react(),
+
 })
 createHtmlPlugin({
       inject: {
@@ -17,7 +18,7 @@ createHtmlPlugin({
             children: `
               !function(f,b,e,v,n,t,s){
                 if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)}; by
                 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
                 n.queue=[];t=b.createElement(e);t.async=!0;
                 t.src=v;s=b.getElementsByTagName(e)[0];
