@@ -4,7 +4,7 @@ import { createHtmlPlugin } from "vite-plugin-html";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/future_V2/', // ⚠️ ВАЖЛИВО: назва вашого GitHub репозиторію
+  base: '/', // ⚠️ ВАЖЛИВО: назва вашого GitHub репозиторію
   plugins: [
     react(),
     createHtmlPlugin({
