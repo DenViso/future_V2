@@ -14,6 +14,7 @@ export const Inner = ({ t, cat1, usdRate }) => {
   const [visibleCount, setVisibleCount] = useState(pageSize);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const [isPusetOpen, setIsPusetOpen] = useState(false);
   const [isEngagementOpen, setIsEngagementOpen] = useState(false);
@@ -79,6 +80,29 @@ export const Inner = ({ t, cat1, usdRate }) => {
     }
   }, [paramValue]);
 
+  // Блокування скролу при відкритому мобільному меню
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
+  // Закриття меню при зміні розміру екрану
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1200 && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobileMenuOpen]);
+
   if (loading) return <Loader />;
 
   // Фільтруємо товари
@@ -117,6 +141,7 @@ export const Inner = ({ t, cat1, usdRate }) => {
     setVisibleCount(pageSize);
     setIsPusetOpen(false);
     setIsEngagementOpen(false);
+    setIsMobileMenuOpen(false); // Закриваємо мобільне меню після вибору
   };
 
   const getPageNumbers = () => {
@@ -165,73 +190,112 @@ export const Inner = ({ t, cat1, usdRate }) => {
       </nav>
 
       <section className="catalog_section">
-        {/* Sidebar */}
-        <aside className="catalog_sidebar">
-          <h4>{t("section.title")}</h4>
-          <p>{t("section.woman")}</p>
-          <ul>
-            <li onClick={() => handleCategorySelect("39")}>{t("section.section10")}</li>
-            <li onClick={() => handleCategorySelect("26")}>{t("section.section17")}</li>
-            <li onClick={() => handleCategorySelect("29")}>{t("section.section15")}</li>
-            <li onClick={() => handleCategorySelect("31")}>{t("section.section14")}</li>
-            <li onClick={() => handleCategorySelect("28")}>{t("section.section13")}</li>
-            <li onClick={() => handleCategorySelect("30")}>{t("section.section11")}</li>
-            <li onClick={() => handleCategorySelect("27")}>{t("section.section16")}</li>
-          </ul>
+        {/* Кнопка бургер-меню (мобільна версія) */}
+        <button 
+          className="catalog_filter_toggle"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Відкрити фільтри"
+        >
+          <img src="/new_img/hero_main/bmf.svg" alt="" />
+          {/* <span className="burger_icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span className="filter_text">{t("catalog.filters") || "Фільтри"}</span> */}
+        </button>
 
-          <div className="horizontal"></div>
-          <p>{t("section.man")}</p>
-          <ul>
-            <li onClick={() => handleCategorySelect("41")}>{t("section.section19")}</li>
-            <li onClick={() => handleCategorySelect("43")}>{t("section.section16")}</li>
-            <li onClick={() => handleCategorySelect("44")}>{t("section.section20")}</li>
-            <li onClick={() => handleCategorySelect("45")}>{t("section.section21")}</li>
-            <li onClick={() => handleCategorySelect("42")}>{t("section.section18")}</li>
-          </ul>
+        {/* Оверлей для мобільного меню */}
+        {isMobileMenuOpen && (
+          <div 
+            className="catalog_overlay"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
 
-          <div className="horizontal"></div>
+        {/* Sidebar з фільтрами */}
+        <div className={`catalog_sidebar_wrapper ${isMobileMenuOpen ? "mobile_open" : ""}`}>
+          {/* Заголовок і кнопка закриття для мобільної версії */}
+          <div className="catalog_sidebar_header">
+            <h3>{t("catalog.filters") || "Фільтри"}</h3>
+            <button 
+              className="catalog_sidebar_close"
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Закрити фільтри"
+            >
+              ✕
+            </button>
+          </div>
 
-          <button onClick={() => setIsPusetOpen(!isPusetOpen)} className="dropdown_btn">
-           {t("section.section12")} {isPusetOpen ? "▲" : "▼"}
-          </button>
-          {isPusetOpen && (
-            <ul className="dropdown_list dropdown_list2">
-              {subCategories.map((sub) => (
-                <li key={sub.id}>
-                  <button
-                    onClick={() => handleCategorySelect(sub.id, "puset")}
-                    className="dropdown_item"
-                  >
-                    <span>{sub.name}</span>
-                  </button>
-                </li>
-              ))}
+          {/* Sidebar */}
+          <aside className="catalog_sidebar">
+            <h4>{t("section.title")}</h4>
+            <p>{t("section.woman")}</p>
+            <ul>
+              <li onClick={() => handleCategorySelect("39")}>{t("section.section10")}</li>
+              <li onClick={() => handleCategorySelect("26")}>{t("section.section17")}</li>
+              <li onClick={() => handleCategorySelect("29")}>{t("section.section15")}</li>
+              <li onClick={() => handleCategorySelect("31")}>{t("section.section14")}</li>
+              <li onClick={() => handleCategorySelect("28")}>{t("section.section13")}</li>
+              <li onClick={() => handleCategorySelect("30")}>{t("section.section11")}</li>
+              <li onClick={() => handleCategorySelect("27")}>{t("section.section16")}</li>
             </ul>
-          )}
 
-          <div className="horizontal"></div>
-
-          <button onClick={() => setIsEngagementOpen(!isEngagementOpen)} className="dropdown_btn">
-            {t("section.section1")} {isEngagementOpen ? "▲" : "▼"}
-          </button>
-          {isEngagementOpen && (
-            <ul className="dropdown_list dropdown_list2">
-              {engagementSubCategories.map((sub) => (
-                <li key={sub.id}>
-                  <button
-                    onClick={() => handleCategorySelect(sub.id, "engagement")}
-                    className="dropdown_item"
-                  >
-                    <span>{sub.name}</span>
-                  </button>
-                </li>
-              ))}
+            <div className="horizontal"></div>
+            <p>{t("section.man")}</p>
+            <ul>
+              <li onClick={() => handleCategorySelect("41")}>{t("section.section19")}</li>
+              <li onClick={() => handleCategorySelect("43")}>{t("section.section16")}</li>
+              <li onClick={() => handleCategorySelect("44")}>{t("section.section20")}</li>
+              <li onClick={() => handleCategorySelect("45")}>{t("section.section21")}</li>
+              <li onClick={() => handleCategorySelect("42")}>{t("section.section18")}</li>
             </ul>
-          )}
 
-          <div className="horizontal"></div>
-          <li onClick={() => handleCategorySelect("53")}>{t("section.section2")}</li>
-        </aside>
+            <div className="horizontal"></div>
+
+            <button onClick={() => setIsPusetOpen(!isPusetOpen)} className="dropdown_btn">
+             {t("section.section12")} {isPusetOpen ? "▲" : "▼"}
+            </button>
+            {isPusetOpen && (
+              <ul className="dropdown_list dropdown_list2">
+                {subCategories.map((sub) => (
+                  <li key={sub.id}>
+                    <button
+                      onClick={() => handleCategorySelect(sub.id, "puset")}
+                      className="dropdown_item"
+                    >
+                      <span>{sub.name}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <div className="horizontal"></div>
+
+            <button onClick={() => setIsEngagementOpen(!isEngagementOpen)} className="dropdown_btn">
+              {t("section.section1")} {isEngagementOpen ? "▲" : "▼"}
+            </button>
+            {isEngagementOpen && (
+              <ul className="dropdown_list dropdown_list2">
+                {engagementSubCategories.map((sub) => (
+                  <li key={sub.id}>
+                    <button
+                      onClick={() => handleCategorySelect(sub.id, "engagement")}
+                      className="dropdown_item"
+                    >
+                      <span>{sub.name}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <div className="horizontal"></div>
+            <li onClick={() => handleCategorySelect("53")}>{t("section.section2")}</li>
+          </aside>
+        </div>
 
         {/* Сітка товарів */}
         <div className="catalog_grid">

@@ -5,18 +5,38 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 700);
 
   const location = useLocation();
   const currentLanguage = i18n.language;
 
+  // Відстежування розміру екрану
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 700; // Змінено на 700px
+      setIsMobile(mobile);
+      // Закрити меню при зміні розміру на десктоп
+      if (!mobile && menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [menuOpen]);
+
+  // Закриття меню при зміні сторінки
   useEffect(() => {
     if (location.pathname === "/") {
       window.scrollTo(0, 0);
     }
     setActiveMenu(null);
-    setMenuOpen(false); // Закрити меню при зміні сторінки
+    setMenuOpen(false);
   }, [location.pathname]);
 
+  // Mouse tracking (якщо потрібно)
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -29,15 +49,27 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
 
   // Блокування скролу при відкритому меню
   useEffect(() => {
-    if (menuOpen) {
+    if (menuOpen && isMobile) {
+      document.body.classList.add('menu-open');
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.height = '100%';
     } else {
+      document.body.classList.remove('menu-open');
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
     }
     return () => {
+      document.body.classList.remove('menu-open');
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
     };
-  }, [menuOpen]);
+  }, [menuOpen, isMobile]);
 
   return (
     <div className="App">
@@ -52,85 +84,127 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
               </Link>
             </div>
 
-            {/* БУРГЕР-КНОПКА */}
-            <div
-              className={`burger ${menuOpen ? "active" : ""}`}
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Toggle menu"
-              aria-expanded={menuOpen}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+            {/* ДЕСКТОПНЕ МЕНЮ (> 700px) */}
+            {!isMobile && (
+              <>
+                <nav className="menu desktop-menu">
+                  <ul>
+                    <li>
+                      <Link to="/Catalog">{t("main.catalog")}</Link>
+                    </li>
+                    <li>
+                      <Link to="/Services">{t("main.services")}</Link>
+                    </li>
+                    <li>
+                      <Link to="/About">{t("main.about")}</Link>
+                    </li>
+                    <li>
+                      <Link to="/Contact">{t("main.contact")}</Link>
+                    </li>
+                  </ul>
+                </nav>
 
-            {/* МЕНЮ */}
-            <nav className={`menu ${menuOpen ? "open" : ""}`}>
-              <button 
-                className="close-btn" 
-                onClick={() => setMenuOpen(false)}
-                aria-label="Close menu"
+                {/* МОВИ ДЛЯ ДЕСКТОПУ */}
+                <div className="lang-menu desktop-lang">
+                  <button
+                    className={currentLanguage === "uk" ? "lngBtn activeLng" : "lngBtn"}
+                    onClick={() => changeLanguage("uk")}
+                  >
+                    Укр
+                  </button>
+                  <div className="line"></div>
+                  <button
+                    className={currentLanguage === "en" ? "lngBtn activeLng" : "lngBtn"}
+                    onClick={() => changeLanguage("en")}
+                  >
+                    Eng
+                  </button>
+                </div>
+              </>
+            )}
+
+            {/* БУРГЕР КНОПКА (<= 700px) */}
+            {isMobile && (
+              <div
+                className={`burger ${menuOpen ? "active" : ""}`}
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="Toggle menu"
+                aria-expanded={menuOpen}
               >
-                ×
-              </button>
-
-              <ul>
-                <li>
-                  <Link to="/Catalog" onClick={() => setMenuOpen(false)}>
-                    {t("main.catalog")}
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/Services" onClick={() => setMenuOpen(false)}>
-                    {t("main.services")}
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/About" onClick={() => setMenuOpen(false)}>
-                    {t("main.about")}
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/Contact" onClick={() => setMenuOpen(false)}>
-                    {t("main.contact")}
-                  </Link>
-                </li>
-              </ul>
-
-              {/* МОВИ усередині меню */}
-              <div className="lang-menu">
-                <button
-                  className={
-                    currentLanguage === "uk" ? "lngBtn activeLng" : "lngBtn"
-                  }
-                  onClick={() => {
-                    changeLanguage("uk");
-                    setMenuOpen(false);
-                  }}
-                >
-                  Укр
-                </button>
-                <div className="line"></div>
-                <button
-                  className={
-                    currentLanguage === "en" ? "lngBtn activeLng" : "lngBtn"
-                  }
-                  onClick={() => {
-                    changeLanguage("en");
-                    setMenuOpen(false);
-                  }}
-                >
-                  Eng
-                </button>
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
-            </nav>
+            )}
 
-            {/* Overlay для закриття меню при кліку поза ним */}
-            {menuOpen && (
-              <div 
-                className="menu-overlay" 
-                onClick={() => setMenuOpen(false)}
-              />
+            {/* МОБІЛЬНЕ МЕНЮ (<= 700px) */}
+            {isMobile && menuOpen && (
+              <>
+                {/* Overlay для затемнення */}
+                <div 
+                  className="menu-overlay"
+                  onClick={() => setMenuOpen(false)}
+                />
+
+                {/* Burger Menu */}
+                <nav className="menu mobile-menu open">
+                  {/* Кнопка закриття */}
+                  <button 
+                    className="close-btn" 
+                    onClick={() => setMenuOpen(false)}
+                    aria-label="Close menu"
+                  >
+                    
+                  </button>
+
+                  {/* Пункти меню */}
+                  <ul>
+                    <li>
+                      <Link to="/Catalog" onClick={() => setMenuOpen(false)}>
+                        {t("main.catalog")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/Services" onClick={() => setMenuOpen(false)}>
+                        {t("main.services")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/About" onClick={() => setMenuOpen(false)}>
+                        {t("main.about")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/Contact" onClick={() => setMenuOpen(false)}>
+                        {t("main.contact")}
+                      </Link>
+                    </li>
+                  </ul>
+
+                  {/* МОВИ В БУРГЕР МЕНЮ */}
+                  <div className="lang-menu mobile-lang">
+                    <button
+                      className={currentLanguage === "uk" ? "lngBtn activeLng" : "lngBtn"}
+                      onClick={() => {
+                        changeLanguage("uk");
+                        setMenuOpen(false);
+                      }}
+                    >
+                      Укр
+                    </button>
+                    <div className="line"></div>
+                    <button
+                      className={currentLanguage === "en" ? "lngBtn activeLng" : "lngBtn"}
+                      onClick={() => {
+                        changeLanguage("en");
+                        setMenuOpen(false);
+                      }}
+                    >
+                      Eng
+                    </button>
+                  </div>
+                </nav>
+              </>
             )}
           </div>
         </div>

@@ -264,7 +264,7 @@
     width: 16rem;
     height: 6rem;
     top: 1.5rem;
-    right: 16%; /* Центруємо на малих екранах */
+    right:25%; /* Центруємо на малих екранах */
     transform: translateX(50%);
     border-radius: 3rem;
   }

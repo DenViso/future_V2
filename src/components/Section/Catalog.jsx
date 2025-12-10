@@ -15,6 +15,7 @@ export const Catalog = ({ cat1 = [], t }) => {
 
   const [page, setPage] = useState(1);
   const [visibleCount, setVisibleCount] = useState(pageSize);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // 🔑 Відновлення сторінки та скролу після повернення
   useEffect(() => {
@@ -26,13 +27,36 @@ export const Catalog = ({ cat1 = [], t }) => {
     }
   }, [location.state]);
 
+  // Блокування скролу при відкритому мобільному меню
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
+  // Закриття меню при зміні розміру екрану
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1200 && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobileMenuOpen]);
+
   // Підкаталоги Пусет
   const pusetSubCategories = [
     { id: 35, name: (t && t("section.section5")) || "Соло", img: "/img/sect/jew/pus/1.jpg" },
     { id: 33, name: (t && t("section.section6")) || "Соло + розсип", img: "/img/sect/jew/pus/2.jpg" },
     { id: 32, name: (t && t("section.section7")) || "Соло фантаз.діам", img: "/img/sect/jew/pus/3.jpg" },
     { id: 34, name: (t && t("section.section8")) || "Фантаз. з розсип", img: "/img/sect/jew/pus/4.jpg" },
-    { id: 37, name: (t && t("section.section9")) || "Кольорові камні", img: "/img/sect/jew/pus/5.jpg" },
+    { id: 37, name: (t && t("section.section9")) || "Кольорові камені", img: "/img/sect/jew/pus/5.jpg" },
     { id: 36, name: (t && t("section.section22"))  },
   ];
 
@@ -80,6 +104,11 @@ export const Catalog = ({ cat1 = [], t }) => {
     return pages;
   };
 
+  const handleCategorySelect = (id) => {
+    console.log("Обрана категорія:", id);
+    setIsMobileMenuOpen(false); // Закриваємо меню після вибору категорії
+  };
+
   return (
     <div className="Catalog">
       {/* Хлібні крихти */}
@@ -88,14 +117,53 @@ export const Catalog = ({ cat1 = [], t }) => {
         <span className="separator">›</span>
         <p>{t("main.catalog")}</p>
       </nav>
-
+ {/* Кнопка бургер-меню (мобільна версія) */}
+        <button 
+          className="catalog_filter_toggle"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Відкрити фільтри"
+        >
+         <img src="/new_img/hero_main/bmf.svg" alt="" />
+          {/* <span className="burger_icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span> */}
+          {/* <span className="filter_text">{t("catalog.filters") || "Фільтри"}</span> */}
+        </button>
       <section className="catalog_section">
-        {/* Sidebar */}
-        <CatalogSidebar
-          pusetSubCategories={pusetSubCategories}
-          engagementSubCategories={engagementSubCategories}
-          onCategorySelect={(id) => console.log("Обрана категорія:", id)}
-        />
+       
+
+        {/* Оверлей для мобільного меню */}
+        {isMobileMenuOpen && (
+          <div 
+            className="catalog_overlay"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+
+        {/* Sidebar з фільтрами */}
+        <div className={`catalog_sidebar_wrapper ${isMobileMenuOpen ? "mobile_open" : ""}`}>
+          {/* Заголовок і кнопка закриття для мобільної версії */}
+          <div className="catalog_sidebar_header">
+            {/* <h3>{t("catalog.filters") || "Фільтри"}</h3> */}
+            <h3>Фільтри</h3>
+            <button 
+              className="catalog_sidebar_close"
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Закрити фільтри"
+            >
+              ✕
+            </button>
+          </div>
+
+          <CatalogSidebar
+            pusetSubCategories={pusetSubCategories}
+            engagementSubCategories={engagementSubCategories}
+            onCategorySelect={handleCategorySelect}
+          />
+        </div>
 
         {/* Сітка товарів */}
         <div className="catalog_grid">
@@ -104,7 +172,7 @@ export const Catalog = ({ cat1 = [], t }) => {
               <Link
                 key={item.id ?? idx}
                 to={`/product/${item.id ?? idx}`}
-                state={{ fromPage: page, scrollY: window.scrollY }} // 🔑 передаємо стан
+                state={{ fromPage: page, scrollY: window.scrollY }}
                 className="catalog_item"
               >
                 <img
