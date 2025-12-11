@@ -168,12 +168,12 @@ export const Reviwes = ({ t }) => {
       {error && <p style={{ color: "red" }}>Помилка: {error}</p>}
       <div
         className="revswesImg"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: 20,
-          marginTop: 20,
-        }}
+        // style={{
+        //   display: "grid",
+        //   gridTemplateColumns: "repeat(3, 1fr)",
+        //   gap: 20,
+        //   marginTop: 20,
+        // }}
       >
         {visible.length === 0 && !loading && (
           <div style={{ gridColumn: "1/-1" }}>Немає відгуків</div>

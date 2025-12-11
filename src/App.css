@@ -11,6 +11,9 @@
   --brown: #3f2622;
   --bg: #f8f7f4;
   --max-width: 144rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ==================== RESET & BASE ==================== */
@@ -28,7 +31,9 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
-
+header{
+  width: 100%;
+}
 body {
   background-color: var(--bg);
   font-family: var(--fontFamily_Inter);
@@ -93,6 +98,7 @@ h3 {
 /* ==================== LAYOUT - ЦЕНТРУВАННЯ ==================== */
 .App {
   width: 100%;
+  max-width: var(--max-width);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1283,6 +1289,8 @@ body.menu-open .menu-overlay {
   margin-bottom: -0.6rem;
   padding-left: 1.5rem;
   color: var(--black);
+  display: flex;
+  justify-content: start;
 }
 
 .contact-form input,
@@ -1506,9 +1514,12 @@ body.menu-open .menu-overlay {
 }
 
 .footer-right {
-  font-size: 1.4rem;
-  max-width: 28rem;
-  background: transparent;
+
+    font-size: 1.4rem;
+    max-width: 35rem;
+    background: transparent;
+    width: 33rem;
+
 }
 
 .footer-address {
@@ -2966,6 +2977,7 @@ body.menu-open .menu-overlay {
   body.menu-open .menu-overlay {
     display: block;
   }
+  
 }
 
 /* Mobile landscape (580px) */
@@ -3394,14 +3406,14 @@ body.menu-open .menu-overlay {
 }
 
 /* Focus styles для доступності */
-a:focus,
+/* a:focus,
 button:focus,
 input:focus,
 select:focus,
 textarea:focus {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
-}
+} */
 
 /* Покращена видимість для осіб з вадами зору */
 @media (prefers-contrast: high) {

@@ -240,7 +240,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
 
           <div className="footer-right">
             <address className="address footer-address">
-              <p>{t("adr.strict")}, {t("adr.adress")}, {t("adr.ofice")}</p>
+              <p>{t("adr.strict")}, {t("adr.adress")},<br /> {t("adr.adress1")},{t("adr.ofice")} </p>
               <h4>{t("adr.title")}</h4>
               <p>
                 <span>{t("adr.day1")}</span> {t("adr.time")}<br />
@@ -249,9 +249,9 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
               </p>
             </address>
 
-            <a href="tel:+3800634545828">+380 063 454 58 28</a>
+            <a href="tel:+380936918998">+38 (093) 691 89 98</a>
 
-            <p className="social-links">
+            <div className="social-links">
               <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer">Telegram</a>
               <div className="line lf"></div>
               <a href="viber://chat?number=%2B380936918998" target="_blank" rel="noopener noreferrer">Viber</a>
@@ -259,7 +259,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
               <a href="https://wa.me/380936918998" target="_blank" rel="noopener noreferrer">WhatsApp</a>
               <div className="line lf"></div>
               <a href="facetime:+380936918998" target="_blank" rel="noopener noreferrer">FaceTime</a>
-            </p>
+            </div>
 
             <p className="social-links">
               <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">Instagram</a>

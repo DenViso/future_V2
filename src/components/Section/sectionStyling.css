@@ -445,7 +445,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   padding: 0 clamp(2rem, 5vw, 5rem);
   position: relative;
@@ -458,7 +458,12 @@
   flex-direction: column;
   justify-content: center;
 }
-
+.revswesImg{
+        display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
 .rew_text_but {
   display: flex;
   flex-direction: row;
@@ -900,6 +905,12 @@ div > textarea:focus {
     min-height: auto;
     padding: 2rem 1.5rem;
   }
+  .revswesImg{
+        display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
 }
 
 /* Mobile (580px) */
@@ -989,6 +1000,12 @@ div > textarea:focus {
   .rew_card_header > h2 {
     font-size: 2.4rem;
   }
+  .revswesImg{
+        display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
 
   .photo_preview_container > .file_input_label,
   .photo_preview {
@@ -1022,6 +1039,13 @@ div > textarea:focus {
 @media (max-width: 400px) {
   .ringList > li {
     height: 18rem;
+  }
+
+  .revswesImg{
+        display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin-top: 20px;
   }
 
   .ringImg {
