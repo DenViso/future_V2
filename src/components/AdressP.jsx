@@ -17,7 +17,7 @@ import React from 'react'
           <div className=" horizontal"></div>
           <address className="address">
             <h4>{t("adr.adr")}</h4>
-            <p>{t("adr.strict")}, {t("adr.adress")}, {t("adr.ofice")}</p>
+            <p>{t("adr.strict")}, {t("adr.adress")},<br /> {t("adr.adress1")},{t("adr.ofice")} </p>
             <h4>{t("adr.title")}</h4>
             <p>
               <span> {t("adr.day1")}</span> {t("adr.time")}<br />
