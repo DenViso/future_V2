@@ -1094,14 +1094,14 @@ div > textarea:focus {
 }
 
 /* Focus styles */
-a:focus,
+/* a:focus,
 button:focus,
 input:focus,
 textarea:focus,
 .radio_label:focus-within {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
-}
+} */
 
 /* ==================== CROSS-BROWSER COMPATIBILITY ==================== */
 
@@ -1165,14 +1165,14 @@ textarea:-webkit-autofill:focus {
 }
 
 /* Better touch targets */
-@media (hover: none) and (pointer: coarse) {
+/* @media (hover: none) and (pointer: coarse) {
   button,
   a,
   .radio_label {
     min-height: 44px;
-    min-width: 44px;
+    width: 44px;
   }
-}
+} */
 
 /* Grid fallback for old browsers */
 @supports not (display: grid) {

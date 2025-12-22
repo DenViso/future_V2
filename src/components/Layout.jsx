@@ -253,17 +253,17 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
 
             <div className="social-links">
               <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer">Telegram</a>
-              <div className="line lf"></div>
+              <p className="line lf"></p>
               <a href="viber://chat?number=%2B380936918998" target="_blank" rel="noopener noreferrer">Viber</a>
-              <div className="line lf"></div>
+              <p className="line lf"></p>
               <a href="https://wa.me/380936918998" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-              <div className="line lf"></div>
+              <p className="line lf"></p>
               <a href="facetime:+380936918998" target="_blank" rel="noopener noreferrer">FaceTime</a>
             </div>
 
             <p className="social-links">
               <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <div className="line lf"></div>
+              <p className="line lf"></p>
               <a href="https://facebook.com/yourusername" target="_blank" rel="noopener noreferrer">Facebook</a>
             </p>
           </div>

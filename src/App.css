@@ -269,10 +269,13 @@ main {
   border-left: 2px solid #6f6f6f;
   height: 1.9rem;
   transition: border-color 0.3s ease;
+  align-items: center;
+  text-align: center;
 }
 
 .lf {
   margin: 0 0.8rem;
+  text-align: center;
 }
 
 /* ==================== MOBILE MENU STYLES ==================== */
@@ -774,7 +777,7 @@ body.menu-open .menu-overlay {
   width: 100%;
   margin-top: 3.4rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 32rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 33rem), 1fr));
   gap: 2rem;
   justify-content: center;
 }
@@ -1308,7 +1311,7 @@ body.menu-open .menu-overlay {
   font-family: var(--fontFamily_Inter);
   outline: none;
   transition: border 0.3s ease, box-shadow 0.3s ease;
-  background-color: var(--white);
+  background-color: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1571,7 +1574,9 @@ body.menu-open .menu-overlay {
   justify-content: flex-start;
   gap: 0.5rem;
   background: transparent;
+  align-items: center;
 }
+
 
 .social-links a {
   color: #333;
@@ -1838,7 +1843,7 @@ body.menu-open .menu-overlay {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   cursor: pointer;
   color: var(--black);
@@ -2615,7 +2620,7 @@ body.menu-open .menu-overlay {
   }
 
   .section5_content {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
+    grid-template-columns: repeat( minmax(min(100%, 28rem), 1fr));
   }
 
   .catalog_grid {
@@ -3117,8 +3122,10 @@ body.menu-open .menu-overlay {
 
   .social-links {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+        align-items: flex-start;
+        gap: 0rem;
+        margin-top: 0rem;
+        display: contents;
   }
 
   .social-links .line.lf {
@@ -3206,7 +3213,11 @@ body.menu-open .menu-overlay {
   }
 
   .question_section .answer {
-    font-size: 1.4rem;
+            font-size: 1.4rem;
+        overflow: visible;
+        width: fit-content;
+        height: fit-content;
+        display: contents;
   }
 
   .care_info_sp {
