@@ -2992,6 +2992,9 @@ body.menu-open .menu-overlay {
   html {
     font-size: 85%;
   }
+  .App{
+    margin: 0 5%;
+  }
 
   .hero {
     min-height: auto;
